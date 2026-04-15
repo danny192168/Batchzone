@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the Impostor</title>
+    <link rel="stylesheet" href="index.css" />
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="theme.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="bg-white border-b border-gray-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+        <img src="logo.svg" alt="BATCHZONE" class="h-7 sm:h-9" />
+        <div class="flex items-center gap-3 sm:gap-5">
+          <button
+            class="flex items-center text-gray-700 hover:text-[#1a7a7a] transition-colors text-sm sm:text-base"
+          >
+            <i class="fa-solid fa-circle-info text-xl"></i>
+            <!-- <span class="ml-1 hidden md:inline">Info</span> -->
+          </button>
+          <!-- <button
+            class="flex items-center text-gray-700 hover:text-[#1a7a7a] transition-colors text-sm sm:text-base"
+          >
+            <i class="fa-solid fa-lightbulb text-xl"></i>
+            <span class="ml-1 hidden md:inline">Suggestions</span>
+          </button> -->
+          <button
+            class="flex items-center text-gray-700 hover:text-[#1a7a7a] transition-colors text-sm sm:text-base"
+          >
+            <i class="fa-solid fa-language text-xl"></i>
+            <!-- <span class="ml-1 hidden md:inline">Language</span> -->
+          </button>
+          <button
+            class="flex items-center text-gray-700 hover:text-[#1a7a7a] transition-colors text-sm sm:text-base"
+          >
+            <i class="fa-solid fa-gear text-xl"></i>
+            <!-- <span class="ml-1 hidden md:inline">Report</span> -->
+          </button>
+          <!-- <button
+            class="bg-[#1a7a7a] text-white px-4 sm:px-5 py-2 rounded-lg hover:bg-[#156565] transition-colors text-sm sm:text-base"
+          >
+            Login
+          </button> -->
+        </div>
+      </div>
+    </header>
+    <!-- HERO -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 py-6 pb-3 sm:py-12">
+      <div class="max-w-3xl">
+        <h1 class="text-3xl sm:text-5xl tracking-tight sm:mb-6 text-gray-700 text-center font-bold">
+          Guesss the Impostor
+        </h1>
+        <!-- <p class="text-lg sm:text-xl text-gray-700 sm:mb-8">
+          Figure who is pretending among you before they win by guessing the word or avoiding votes.
+        </p> -->
+      </div>
+    </section>
+    <!-- Card Container -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex flex-col gap-6 mb-6 sm:mb-12">
+      <!-- PLAYERS -->
+      <div>
+        <h2 class="text-xl font-bold mb-3 text-gray-600">Players</h2>
+
+        <div
+          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-4 px-4 mb-3 font-bold bg-[#1a7a7a] text-white"
+        >
+          <div>John</div>
+          <div><i class="fa-solid fa-xmark text-lg"></i></div>
+        </div>
+        <div
+          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-4 px-4 mb-3 font-bold bg-[#1a7a7a] text-white"
+        >
+          <div>John</div>
+          <div><i class="fa-solid fa-xmark text-lg"></i></div>
+        </div>
+        <div
+          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-4 px-4 mb-3 font-bold bg-[#1a7a7a] text-white"
+        >
+          <div>John</div>
+          <div><i class="fa-solid fa-xmark text-lg"></i></div>
+        </div>
+
+        <div class="flex justify-between gap-3 text-white">
+          <input
+            type="text"
+            placeholder="Enter player name..."
+            class="bg-[#1a7a7a] border-none focus:outline-none px-4 py-4 rounded-lg font-bold flex-1"
+          />
+          <div
+            class="bg-[#1a7a7a] border-none focus:outline-none px-4 py-4 rounded-lg grid place-items-center grid-flow-col"
+          >
+            <i class="fa-solid fa-plus text-lg"></i>
+            <!-- Add -->
+          </div>
+        </div>
+      </div>
+      <br />
+      <!-- CATEGORIES -->
+      <div class="text-gray-600">
+        <h2 class="text-xl font-bold mb-3 text-gray-600">Categories</h2>
+
+        <div
+          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-4 px-4 mb-3 font-bold bg-[#1a7a7a] text-white"
+        >
+          <div>Everyday Objects</div>
+          <div><i class="fa-solid fa-check text-lg"></i></div>
+        </div>
+        <div
+          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-4 px-4 mb-3 font-bold bg-[#B4CDED]"
+        >
+          <div>Food and Drinks</div>
+          <!-- <div><i class="fa-solid fa-check text-lg"></i></div> -->
+        </div>
+        <div
+          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-4 px-4 mb-3 font-bold bg-[#B4CDED]"
+        >
+          <div>Animals and Plants</div>
+          <!-- <div><i class="fa-solid fa-check text-lg"></i></div> -->
+        </div>
+        <div
+          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-4 px-4 mb-3 font-bold bg-[#B4CDED]"
+        >
+          <div>School & College</div>
+          <!-- <div><i class="fa-solid fa-check text-lg"></i></div> -->
+        </div>
+        <div
+          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-4 px-4 mb-3 font-bold bg-[#B4CDED]"
+        >
+          <div>School & College</div>
+          <!-- <div><i class="fa-solid fa-check text-lg"></i></div> -->
+        </div>
+        <div
+          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-4 px-4 mb-3 font-bold bg-[#B4CDED]"
+        >
+          <div>Jobs</div>
+          <!-- <div><i class="fa-solid fa-check text-lg"></i></div> -->
+        </div>
+        <div
+          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-4 px-4 mb-3 font-bold bg-[#B4CDED]"
+        >
+          <div>Select Custom</div>
+          <!-- <div><i class="fa-solid fa-check text-lg"></i></div> -->
+        </div>
+
+        <div class="flex justify-between gap-3 text-white">
+          <input
+            type="text"
+            placeholder="Enter player name..."
+            class="bg-[#1a7a7a] border-none focus:outline-none px-4 py-4 rounded-lg font-bold flex-1"
+          />
+          <div
+            class="bg-[#1a7a7a] border-none focus:outline-none px-4 py-4 rounded-lg grid place-items-center grid-flow-col"
+          >
+            <i class="fa-solid fa-plus text-lg"></i>
+            <!-- Add -->
+          </div>
+        </div>
+      </div>
+      <div class="w-full bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+        <div class="p-4 sm:p-6">
+          <h3 class="font-bold text-gray-600 mb-2">Players</h3>
+          <p class="text-gray-600">
+            This card takes the full width of its parent container and is perfect for feature
+            content or game details.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 text-gray-300 mt-auto">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <div class="grid sm:grid-cols-3 gap-8">
+          <div>
+            <h4 class="text-white mb-4">BATCHZONE</h4>
+            <p class="text-sm text-gray-400">Social games for everyone to enjoy together</p>
+          </div>
+          <div>
+            <h4 class="text-white mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-white transition-colors">About</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Games</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white mb-4">Connect</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-white transition-colors">Facebook</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Discord</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Cat-bolz</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+          © 2026 BATCHZONE. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
