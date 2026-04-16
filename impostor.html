@@ -15,7 +15,7 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body>
+  <body class="bg-[#F7F5FB]">
     <header class="bg-white border-b border-gray-200">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
         <img src="logo.svg" alt="BATCHZONE" class="h-7 sm:h-9" />
@@ -45,7 +45,7 @@
             <!-- <span class="ml-1 hidden md:inline">Report</span> -->
           </button>
           <!-- <button
-            class="bg-[#1a7a7a] text-white px-4 sm:px-5 py-2 rounded-lg hover:bg-[#156565] transition-colors text-sm sm:text-base"
+            class="text-gray-600 px-4 sm:px-5 py-2 rounded-lg hover:bg-[#156565] transition-colors text-sm sm:text-base"
           >
             Login
           </button> -->
@@ -54,117 +54,121 @@
     </header>
     <!-- HERO -->
     <section class="max-w-6xl mx-auto px-4 sm:px-6 py-6 pb-3 sm:py-12">
+      <h1 class="text-3xl sm:text-5xl tracking-tight text-gray-700 text-center font-bold">
+        Guesss the Impostor
+      </h1>
       <div class="max-w-3xl">
-        <h1 class="text-3xl sm:text-5xl tracking-tight sm:mb-6 text-gray-700 text-center font-bold">
-          Guesss the Impostor
-        </h1>
         <!-- <p class="text-lg sm:text-xl text-gray-700 sm:mb-8">
           Figure who is pretending among you before they win by guessing the word or avoiding votes.
         </p> -->
       </div>
     </section>
     <!-- Card Container -->
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex flex-col gap-6 mb-6 sm:mb-12">
+    <section
+      class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex flex-col gap-6 mb-6 sm:mb-12 text-gray-600"
+    >
       <!-- PLAYERS -->
       <div>
-        <h2 class="text-xl font-bold mb-3 text-gray-600">Players</h2>
+        <h2 class="text-xl font-bold mb-2">Players</h2>
+        <p class="mb-3">Add at least 3 players to start</p>
+        <div class="grid grid-cols-3 gap-4 text-sm sm:text-base text-gray-900">
+          <div
+            class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-3 px-3 mb-3 font-bold bg-white"
+          >
+            <div>John</div>
+            <div><i class="fa-solid fa-xmark text-lg"></i></div>
+          </div>
+          <div
+            class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-3 px-3 mb-3 font-bold bg-white"
+          >
+            <div>Mary</div>
+            <div><i class="fa-solid fa-xmark text-lg"></i></div>
+          </div>
+          <div
+            class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-3 px-3 mb-3 font-bold bg-white"
+          >
+            <div>Bob</div>
+            <div><i class="fa-solid fa-xmark text-lg"></i></div>
+          </div>
+        </div>
 
-        <div
-          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-4 px-4 mb-3 font-bold bg-[#1a7a7a] text-white"
-        >
-          <div>John</div>
-          <div><i class="fa-solid fa-xmark text-lg"></i></div>
-        </div>
-        <div
-          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-4 px-4 mb-3 font-bold bg-[#1a7a7a] text-white"
-        >
-          <div>John</div>
-          <div><i class="fa-solid fa-xmark text-lg"></i></div>
-        </div>
-        <div
-          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-4 px-4 mb-3 font-bold bg-[#1a7a7a] text-white"
-        >
-          <div>John</div>
-          <div><i class="fa-solid fa-xmark text-lg"></i></div>
-        </div>
-
-        <div class="flex justify-between gap-3 text-white">
+        <div class="flex gap-3 text-gray-900">
           <input
             type="text"
             placeholder="Enter player name..."
-            class="bg-[#1a7a7a] border-none focus:outline-none px-4 py-4 rounded-lg font-bold flex-1"
+            class="border border-gray-200 focus:outline-none px-3 py-3 rounded-lg font-bold shadow-lg w-1 flex-1 bg-white"
           />
           <div
-            class="bg-[#1a7a7a] border-none focus:outline-none px-4 py-4 rounded-lg grid place-items-center grid-flow-col"
+            class="border border-gray-200 focus:outline-none px-3 py-3 rounded-lg shadow-lg grid place-items-center grid-flow-col bg-white"
           >
             <i class="fa-solid fa-plus text-lg"></i>
             <!-- Add -->
           </div>
         </div>
       </div>
-      <br />
-      <!-- CATEGORIES -->
-      <div class="text-gray-600">
-        <h2 class="text-xl font-bold mb-3 text-gray-600">Categories</h2>
 
+      <!-- CATEGORIES -->
+      <div class="text-gray-900">
+        <h2 class="text-xl font-bold mb-2 text-gray-600">Categories</h2>
+        <p class="mb-3 text-gray-600">Select categories below or from customs</p>
         <div
-          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-4 px-4 mb-3 font-bold bg-[#1a7a7a] text-white"
+          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-3 px-3 mb-3 font-bold bg-[#1A7A7A] text-white"
         >
           <div>Everyday Objects</div>
           <div><i class="fa-solid fa-check text-lg"></i></div>
         </div>
         <div
-          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-4 px-4 mb-3 font-bold bg-[#B4CDED]"
+          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-3 px-3 mb-3 font-bold bg-white"
         >
           <div>Food and Drinks</div>
           <!-- <div><i class="fa-solid fa-check text-lg"></i></div> -->
         </div>
         <div
-          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-4 px-4 mb-3 font-bold bg-[#B4CDED]"
+          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-3 px-3 mb-3 font-bold bg-white"
         >
           <div>Animals and Plants</div>
           <!-- <div><i class="fa-solid fa-check text-lg"></i></div> -->
         </div>
         <div
-          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-4 px-4 mb-3 font-bold bg-[#B4CDED]"
+          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-3 px-3 mb-3 font-bold bg-white"
         >
           <div>School & College</div>
           <!-- <div><i class="fa-solid fa-check text-lg"></i></div> -->
         </div>
         <div
-          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-4 px-4 mb-3 font-bold bg-[#B4CDED]"
+          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-3 px-3 mb-3 font-bold bg-white"
         >
           <div>School & College</div>
           <!-- <div><i class="fa-solid fa-check text-lg"></i></div> -->
         </div>
         <div
-          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-4 px-4 mb-3 font-bold bg-[#B4CDED]"
-        >
-          <div>Jobs</div>
-          <!-- <div><i class="fa-solid fa-check text-lg"></i></div> -->
-        </div>
-        <div
-          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-4 px-4 mb-3 font-bold bg-[#B4CDED]"
+          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-200 py-3 px-3 mb-3 font-bold bg-white"
         >
           <div>Select Custom</div>
-          <!-- <div><i class="fa-solid fa-check text-lg"></i></div> -->
-        </div>
-
-        <div class="flex justify-between gap-3 text-white">
-          <input
-            type="text"
-            placeholder="Enter player name..."
-            class="bg-[#1a7a7a] border-none focus:outline-none px-4 py-4 rounded-lg font-bold flex-1"
-          />
-          <div
-            class="bg-[#1a7a7a] border-none focus:outline-none px-4 py-4 rounded-lg grid place-items-center grid-flow-col"
-          >
-            <i class="fa-solid fa-plus text-lg"></i>
-            <!-- Add -->
+          <div>
+            <i class="fa-solid fa-pencil text-lg"></i>
           </div>
         </div>
       </div>
-      <div class="w-full bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+
+      <!-- IMPOSTOR -->
+      <div class="text-white">
+        <h2 class="text-xl font-bold mb-2 text-gray-600">Impostor</h2>
+        <p class="mb-3 text-gray-600">1 impostor per 3 players is ideal</p>
+
+        <div class="grid grid-cols-2 gap-4 w-full overflow-hidden mb-3 font-bold text-gray-600">
+          <div
+            class="border border-gray-200 rounded-xl shadow-lg py-3 px-3 bg-[#1A7A7A] text-white"
+          >
+            1 Impostor
+          </div>
+          <div class="border border-gray-200 rounded-xl shadow-lg py-3 px-3 bg-white">
+            2 Impostors
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="w-full bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
         <div class="p-4 sm:p-6">
           <h3 class="font-bold text-gray-600 mb-2">Players</h3>
           <p class="text-gray-600">
@@ -172,38 +176,16 @@
             content or game details.
           </p>
         </div>
+      </div> -->
+      <!-- Start overlay -->
+      <div class="sticky bottom-4 w-full max-w-xl flex items-center mx-auto">
+        <button
+          class="button hover:bg-gray-200 font-bold py-4 w-full px-10 shadow-2xl rounded-xl bg-[#E05263] text-white text-lg"
+        >
+          <i class="fa-solid fa-play mr-2"></i>
+          Start Game
+        </button>
       </div>
     </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-gray-800 text-gray-300 mt-auto">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <div class="grid sm:grid-cols-3 gap-8">
-          <div>
-            <h4 class="text-white mb-4">BATCHZONE</h4>
-            <p class="text-sm text-gray-400">Social games for everyone to enjoy together</p>
-          </div>
-          <div>
-            <h4 class="text-white mb-4">Quick Links</h4>
-            <ul class="space-y-2 text-sm">
-              <li><a href="#" class="hover:text-white transition-colors">About</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">Games</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="text-white mb-4">Connect</h4>
-            <ul class="space-y-2 text-sm">
-              <li><a href="#" class="hover:text-white transition-colors">Facebook</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">Discord</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">Cat-bolz</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
-          © 2026 BATCHZONE. All rights reserved.
-        </div>
-      </div>
-    </footer>
   </body>
 </html>
