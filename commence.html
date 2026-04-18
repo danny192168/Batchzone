@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the Impostor</title>
+    <link rel="stylesheet" href="index.css" />
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-[#1E2939] text-white overflow-hidden">
+    <section
+      class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex flex-col gap-6 min-h-screen relative"
+    >
+      <div class="text-center mt-5">
+        <h3 class="font-bold text-2xl mb-4">Results</h3>
+      </div>
+      <!-- <div class="bg-gray-300 shadow-lg p-5 text-gray-900 rounded-xl max-w-[780px] mx-auto my-auto">
+        <h2 class="text-xl font-bold text-center mb-2">James is not the Impostor</h2>
+        <div class="text-center text-4xl mb-2">
+          <i class="fa-solid fa-xmark text-[#B6174B]"></i>
+        </div>
+        <p class="mb-4">
+          The impostor is still in the group. Proceed to next round or let the impostor take the
+          win.
+        </p>
+        <div class="text-white grid grid-cols-2 gap-2">
+          <button class="bg-[#B6174B] p-2 shadow-lg rounded-xl font-bold active:bg-[#8a123a]">
+            New Game
+          </button>
+          <button class="bg-[#1A7A7A] p-2 shadow-lg rounded-xl font-bold active:bg-[#156565]">
+            Next Round
+          </button>
+        </div>
+      </div> -->
+      <div class="flex flex-col gap-5 mx-auto my-auto">
+        <div
+          class="bg-gray-300 shadow-lg p-5 text-gray-900 rounded-xl max-w-[min(780px,100%)] w-full mx-auto my-auto"
+        >
+          <h2 class="text-xl font-bold text-center mb-2">James is the Impostor</h2>
+          <p class="mb-4">Congrats!! 🎉 The impostore had been caught.</p>
+          <!-- <div class="text-center text-6xl text-green-700">
+            <i class="fa-solid fa-circle-check"></i>
+          </div> -->
+          <h2 class="text-xl font-bold text-center mb-4 text-gray-600">Secret Word: Banana</h2>
+          <button class="bg-gray-900 p-2 shadow-lg rounded-xl font-bold w-full text-white">
+            New Game
+          </button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

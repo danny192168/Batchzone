@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the Impostor</title>
+    <link rel="stylesheet" href="index.css" />
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-[#1E2939] text-white overflow-hidden">
+    <section
+      class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex flex-col gap-6 min-h-screen relative z-10"
+    >
+      <div class="text-center mt-5">
+        <h1 class="font-bold text-2xl mb-4">Who's the Impostor?</h1>
+        <p class="text-gray-300">Decide who to vote and submit it when it's ready</p>
+      </div>
+      <div class="flex flex-col gap-4 text-white">
+        <div
+          class="bg-white shadow-lg py-3 px-4 font-bold rounded-xl border-2 border-[#1A7A7A] text-gray-900"
+        >
+          Steve Vai
+        </div>
+        <div class="bg-[#1A7A7A] shadow-lg py-3 px-4 font-bold rounded-xl">Steve Vai</div>
+        <div class="bg-[#1A7A7A] shadow-lg py-3 px-4 font-bold rounded-xl">Steve Vai</div>
+        <div class="bg-[#1A7A7A] shadow-lg py-3 px-4 font-bold rounded-xl">Steve Vai</div>
+      </div>
+      <button
+        class="p-4 bg-white w-60 rounded-xl shadow-lg font-bold text-gray-900 absolute left-1/2 -translate-x-1/2 bottom-10"
+      >
+        Submit Vote
+      </button>
+    </section>
+  </body>
+</html>
