@@ -1,5 +1,5 @@
 :root {
-  --card-width: 20rem;
+  --card-width: 19rem;
 }
 
 .card-section {
@@ -38,7 +38,7 @@
 }
 
 .card:active .content .front {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.642);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .front,
@@ -57,12 +57,12 @@
 .back {
   color: white;
   --tw-bg-opacity: 1;
-  background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+  background-color: rgb(12, 16, 22);
   transform: rotateY(180deg);
 }
 
 .card {
-  transform: translateX(calc((72rem / 2 + var(--card-width) / 2)));
+  transform: translateX(calc((73rem / 2 + var(--card-width) / 2)));
   transition: all 0.5s ease-in-out;
 }
 
@@ -71,5 +71,5 @@
 }
 .shown-card ~ .card {
   transition: all 0.5s ease-in-out;
-  transform: translateX(calc(-1 * (72rem / 2 + var(--card-width) / 2)));
+  transform: translateX(calc(-1 * (73rem / 2 + var(--card-width) / 2)));
 }

@@ -1,33 +1,106 @@
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--spacing);
+.hamburger * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.card-container * {
-  border: solid 1px black;
-}
-
-.game-card {
-  max-width: 22rem;
-  flex-grow: 1;
-  aspect-ratio: 1 / 1.2;
-  display: flex;
+.hamburger {
+  /* display: none; */
+  /* flex-direction: column; */
+  display: none;
   flex-direction: column;
-  align-items: center;
-  /* justify-content: end; */
-  background-color: rgb(207, 207, 207);
-  overflow: hidden;
+  justify-content: space-evenly;
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
 }
 
-.game-card .card-description {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
-  padding: 2rem 1rem 1rem 1rem;
-  color: white;
+.hamburger .line {
+  display: inline-block;
+  height: 20%;
+  border-radius: 1rem;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  transition:
+    transform 0.3s,
+    opacity 0.2s,
+    background-color 0.3s;
 }
 
-.game-card .card-description h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
+.hamburger:has(#menu-toggle:checked) .line:nth-of-type(1) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: rotate(45deg);
+}
+.hamburger:has(#menu-toggle:checked) .line:nth-of-type(2) {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: rotate(-45deg);
+}
+.hamburger:has(#menu-toggle:checked) .line:nth-of-type(3) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 690px) {
+  header:has(#menu-toggle:checked) .navigation-container {
+    display: flex;
+    right: 0;
+    transition: all 1s;
+  }
+
+  header:has(#menu-toggle:checked) .navigation-container button {
+    font-size: 1.2rem;
+  }
+  .navigation-container {
+    position: absolute;
+    transition: all 1s;
+    /* right: -0vw; */
+    bottom: -100vh;
+    background: rgba(255, 255, 255, 0.9);
+    /* top: 1rem; */
+    display: none;
+    flex-direction: column;
+    max-width: 30rem;
+    width: 100%;
+    gap: 1rem;
+    padding: 3rem 1rem;
+    height: 100vh;
+    z-index: 100;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* CARD CARD FLEXBOX FOR MOBILE */
+
+@media (max-width: 690px) {
+  .game-card {
+    padding-bottom: 1rem;
+  }
+
+  .game-card-description h4 {
+    font-size: 1rem;
+  }
+
+  .game-card-description p {
+    display: none;
+  }
 }

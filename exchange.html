@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guess the Impostor</title>
+    <title>See you cards</title>
     <link rel="stylesheet" href="index.css" />
     <link href="./output.css" rel="stylesheet" />
     <link rel="stylesheet" href="card-flip.css" />
@@ -15,84 +15,25 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body class="bg-[#F7F5FB]">
+  <body class="bg-[#1E2939]">
     <section
-      class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex flex-col gap-6 border border-black min-h-screen"
+      class="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-5 flex flex-col gap-6 border border-black min-h-screen overflow-hidden relative"
     >
       <section class="flex flex-col">
-        <div class="w-full">
-          <button class="text-3xl"><i class="fa-solid fa-angle-left"></i></button>
+        <div class="w-full text-gray-400">
+          <button class="text-2xl"><i class="fa-solid fa-angle-left"></i></button>
         </div>
       </section>
       <br />
       <!-- CARDS -->
-      <section class="card-section mx-auto">
-        <div class="card">
+      <section class="card-section mx-auto my-auto">
+        <div class="card shown-card">
           <div class="content">
-            <div class="front p-2 aspect-[4/5] bg-green-500 text-white">
-              <div class="flex flex-col gap-8">
-                <h2 class="text-4xl font-bold text-center text-gray-900">Steve Vai</h2>
-                <div class="flex justify-center text-6xl text-gray-900">
-                  <i class="fa-regular fa-hand-pointer"></i>
-                </div>
-              </div>
-            </div>
-            <div class="back">
-              <h2 class="text-4xl font-bold text-center mb-4">John Mayer</h2>
-              <div>
-                <div
-                  class="text-lg text-center bg-gray-200 px-4 py-7 rounded-lg mt-4 text-gray-700 w-full"
-                >
-                  <!-- <h3 class="text-2xl text-center font-bold text-[#B6174B]">
-                    You are the Impostor
-                  </h3> -->
-                  <p>Don't tell this word to anyone</p>
-                  <h4 class="font-bold text-green-700 text-2xl">BANANA</h4>
-                  <!-- <div class="flex text-7xl text-gray-900">
-                    <i class="fa-solid fa-xmark mx-auto"></i>
-                  </div> -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="content">
-            <div class="front p-2 aspect-[4/5] bg-green-500 text-white">
-              <div class="flex flex-col gap-8">
-                <h2 class="text-4xl font-bold text-center text-gray-900">Steve Vai</h2>
-                <div class="flex justify-center text-6xl text-gray-900">
-                  <i class="fa-regular fa-hand-pointer"></i>
-                </div>
-              </div>
-            </div>
-            <div class="back">
-              <h2 class="text-4xl font-bold text-center mb-4">John Mayer</h2>
-              <div>
-                <div
-                  class="text-lg text-center bg-gray-200 px-4 py-7 rounded-lg mt-4 text-gray-700 w-full"
-                >
-                  <!-- <h3 class="text-2xl text-center font-bold text-[#B6174B]">
-                    You are the Impostor
-                  </h3> -->
-                  <p>Don't tell this word to anyone</p>
-                  <h4 class="font-bold text-green-700 text-2xl">BANANA</h4>
-                  <!-- <div class="flex text-7xl text-gray-900">
-                    <i class="fa-solid fa-xmark mx-auto"></i>
-                  </div> -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="content">
-            <div class="front p-2 aspect-[4/5] bg-yellow-500 text-white">
-              <div class="flex flex-col gap-8">
-                <h2 class="text-4xl font-bold text-center text-gray-900">John Mayer</h2>
-                <div class="flex justify-center text-6xl text-gray-900">
-                  <i class="fa-regular fa-hand-pointer"></i>
-                </div>
+            <div class="front bg-green-500">
+              <h2 class="text-4xl font-bold text-center text-gray-900">John Mayer</h2>
+              <div class="flex justify-center text-gray-900 flex-col items-center gap-4 mt-auto">
+                <i class="fa-regular fa-hand-pointer text-4xl"></i>
+                <p class="font-bold">HOLD TO REVEAL</p>
               </div>
             </div>
             <div class="back">
@@ -104,17 +45,13 @@
                   <h3 class="text-2xl text-center font-bold text-[#B6174B]">
                     You are the Impostor
                   </h3>
-                  <!-- <p>Pretend like you know the word</p> -->
                   <h4 class="font-bold text-gray-600 text-2xl">HINT: YELLOW</h4>
-                  <!-- <div class="flex text-7xl text-gray-900">
-                    <i class="fa-solid fa-xmark mx-auto"></i>
-                  </div> -->
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="card shown-card">
+        <div class="card">
           <div class="content">
             <div class="front bg-green-500">
               <h2 class="text-4xl font-bold text-center text-gray-900">Steve Vai</h2>
@@ -124,19 +61,11 @@
               </div>
             </div>
             <div class="back">
-              <h2 class="text-4xl font-bold text-center mb-4">John Mayer</h2>
+              <h2 class="text-4xl font-bold text-center mb-4 text-white">Steve Vai</h2>
               <div>
-                <div
-                  class="text-lg text-center bg-gray-200 px-4 py-7 rounded-lg mt-4 text-gray-700 w-full"
-                >
-                  <!-- <h3 class="text-2xl text-center font-bold text-[#B6174B]">
-                    You are the Impostor
-                  </h3> -->
-                  <p>Don't tell this word to anyone</p>
-                  <h4 class="font-bold text-green-700 text-2xl">BANANA</h4>
-                  <!-- <div class="flex text-7xl text-gray-900">
-                    <i class="fa-solid fa-xmark mx-auto"></i>
-                  </div> -->
+                <div class="text-lg text-center bg-gray-100 px-4 py-7 rounded-lg mt-4 w-full">
+                  <p class="text-gray-800">Don't tell this word to anyone</p>
+                  <h4 class="font-bold text-[#1A7A7A] text-2xl">BANANA</h4>
                 </div>
               </div>
             </div>
@@ -144,7 +73,7 @@
         </div>
       </section>
       <button
-        class="bg-gray-900 text-white py-4 px-4 rounded-4xl shadow-xl hover:bg-gray-700 transition-colors w-80 mx-auto text-lg font-semibold self-end"
+        class="bg-gray-200 py-4 px-4 rounded-4xl shadow-xl active:bg-gray-300 transition-colors w-70 mx-auto text-lg font-semibold self-end text-gray-900 mt-auto mb-8"
       >
         Next Player
       </button>
