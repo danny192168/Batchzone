@@ -1,0 +1,75 @@
+:root {
+  --card-width: 20rem;
+}
+
+.card-section {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  width: var(--card-width);
+  aspect-ratio: 4/5;
+}
+
+.card {
+  perspective: 2000px;
+  user-select: none;
+  position: absolute;
+  width: var(--card-width);
+  aspect-ratio: 4/5;
+  display: grid;
+  place-items: center;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+  transition:
+    transform 0.4s,
+    box-shadow 0.4s;
+  transform-style: preserve-3d;
+  transition-timing-function: ease-in-out;
+}
+
+.card:active .content {
+  transform: rotateY(180deg) scale(1.05);
+  transition: transform 0.5s;
+}
+
+.card:active .content .front {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.642);
+}
+
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  border-radius: 0.5rem;
+  backface-visibility: hidden;
+  padding: 2rem 1rem;
+  transition: box-shadow 0.4s;
+}
+
+.back {
+  color: white;
+  --tw-bg-opacity: 1;
+  background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+  transform: rotateY(180deg);
+}
+
+.card {
+  transform: translateX(calc((72rem / 2 + var(--card-width) / 2)));
+  transition: all 0.5s ease-in-out;
+}
+
+.shown-card {
+  transform: translateX(0);
+}
+.shown-card ~ .card {
+  transition: all 0.5s ease-in-out;
+  transform: translateX(calc(-1 * (72rem / 2 + var(--card-width) / 2)));
+}
