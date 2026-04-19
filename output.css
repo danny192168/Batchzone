@@ -395,6 +395,9 @@
   .ml-auto {
     margin-left: auto;
   }
+  .block {
+    display: block;
+  }
   .flex {
     display: flex;
   }
@@ -1333,6 +1336,11 @@
       background-color: #156565;
     }
   }
+  .active\:bg-gray-200 {
+    &:active {
+      background-color: var(--color-gray-200);
+    }
+  }
   .active\:bg-gray-300 {
     &:active {
       background-color: var(--color-gray-300);
@@ -1348,14 +1356,64 @@
       background-color: var(--color-gray-500);
     }
   }
+  .active\:bg-gray-600 {
+    &:active {
+      background-color: var(--color-gray-600);
+    }
+  }
   .active\:bg-gray-700 {
     &:active {
       background-color: var(--color-gray-700);
     }
   }
+  .active\:bg-gray-800 {
+    &:active {
+      background-color: var(--color-gray-800);
+    }
+  }
+  .active\:bg-gray-900 {
+    &:active {
+      background-color: var(--color-gray-900);
+    }
+  }
+  .active\:text-gray-200 {
+    &:active {
+      color: var(--color-gray-200);
+    }
+  }
+  .active\:text-gray-400 {
+    &:active {
+      color: var(--color-gray-400);
+    }
+  }
+  .active\:text-gray-500 {
+    &:active {
+      color: var(--color-gray-500);
+    }
+  }
+  .active\:text-gray-600 {
+    &:active {
+      color: var(--color-gray-600);
+    }
+  }
+  .active\:text-gray-800 {
+    &:active {
+      color: var(--color-gray-800);
+    }
+  }
   .active\:text-gray-900 {
     &:active {
       color: var(--color-gray-900);
+    }
+  }
+  .active\:text-red-600 {
+    &:active {
+      color: var(--color-red-600);
+    }
+  }
+  .active\:text-white {
+    &:active {
+      color: var(--color-white);
     }
   }
   .active\:brightness-0 {

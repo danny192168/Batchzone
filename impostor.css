@@ -1,0 +1,14 @@
+@media (max-width: 40px) {
+  #players-container {
+    grid-template-columns: auto;
+  }
+}
+
+.selected-item {
+  color: white;
+  background: #1a7a7a;
+}
+
+.selected-item div:nth-child(2) {
+  display: block;
+}

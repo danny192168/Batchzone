@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guess the Impostor</title>
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="impostor.css" />
     <link href="./output.css" rel="stylesheet" />
     <link rel="stylesheet" href="theme.css" />
     <link
@@ -69,75 +70,83 @@
       <div>
         <h2 class="text-xl font-bold mb-2">Players</h2>
         <p class="mb-3 text-gray-300">Add at least 3 players to start</p>
-        <div class="grid grid-cols-3 gap-4 text-sm sm:text-base text-gray-900">
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm sm:text-base text-gray-900 mb-3"
+          id="players-container"
+        >
           <div
-            class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 mb-3 font-bold bg-gray-300"
+            class="player-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 font-bold bg-gray-300"
           >
-            <div>John</div>
+            <div>Player 1</div>
+            <div class="active:text-gray-500"><i class="fa-solid fa-xmark text-lg"></i></div>
+          </div>
+          <div
+            class="player-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 font-bold bg-gray-300"
+          >
+            <div class="active:text-gray-500">Player 2</div>
             <div><i class="fa-solid fa-xmark text-lg"></i></div>
           </div>
           <div
-            class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 mb-3 font-bold bg-gray-300"
+            class="player-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 font-bold bg-gray-300"
           >
-            <div>Mary</div>
-            <div><i class="fa-solid fa-xmark text-lg"></i></div>
-          </div>
-          <div
-            class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 mb-3 font-bold bg-gray-300"
-          >
-            <div>Bob</div>
+            <div class="active:text-gray-500">Player 3</div>
             <div><i class="fa-solid fa-xmark text-lg"></i></div>
           </div>
         </div>
-
+        <!-- PLAYER INPUT -->
         <div class="flex gap-3 text-gray-900">
           <input
             type="text"
             placeholder="Enter player name..."
+            minlength="1"
+            required
+            maxlength="12"
             class="border border-gray-800 focus:outline-none px-3 py-3 rounded-lg font-bold shadow-lg w-1 flex-1 bg-gray-300"
+            id="player-input"
           />
-          <div
-            class="border border-gray-800 focus:outline-none px-3 py-3 rounded-lg shadow-lg grid place-items-center grid-flow-col bg-gray-300"
+          <button
+            class="active:text-gray-500 border border-gray-800 focus:outline-none px-3 py-3 rounded-lg shadow-lg grid place-items-center grid-flow-col bg-gray-300"
+            id="player-submit-btn"
           >
             <i class="fa-solid fa-plus text-lg"></i>
             <!-- Add -->
-          </div>
+          </button>
         </div>
       </div>
 
       <!-- CATEGORIES -->
-      <div class="text-gray-800">
+      <div class="text-gray-800" id="categories-container">
         <h2 class="text-xl font-bold mb-2 text-gray-200">Categories</h2>
         <p class="mb-3 text-gray-300">Select categories below or from customs</p>
         <div
-          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 mb-3 font-bold bg-[#1A7A7A] text-white"
+          class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 mb-3 font-bold bg-gray-300 selected-item"
         >
           <div>Everyday Objects</div>
-          <div><i class="fa-solid fa-check text-lg"></i></div>
+          <div class="hidden"><i class="fa-solid fa-check text-lg"></i></div>
         </div>
         <div
-          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 mb-3 font-bold bg-gray-300"
+          class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 mb-3 font-bold bg-gray-300"
         >
           <div>Food and Drinks</div>
-          <!-- <div><i class="fa-solid fa-check text-lg"></i></div> -->
+          <div class="hidden"><i class="fa-solid fa-check text-lg"></i></div>
         </div>
         <div
-          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 mb-3 font-bold bg-gray-300"
+          class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 mb-3 font-bold bg-gray-300"
         >
           <div>Animals and Plants</div>
-          <!-- <div><i class="fa-solid fa-check text-lg"></i></div> -->
+          <div class="hidden"><i class="fa-solid fa-check text-lg"></i></div>
         </div>
         <div
-          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 mb-3 font-bold bg-gray-300"
+          class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 mb-3 font-bold bg-gray-300"
         >
           <div>School & College</div>
-          <!-- <div><i class="fa-solid fa-check text-lg"></i></div> -->
+          <div class="hidden"><i class="fa-solid fa-check text-lg"></i></div>
         </div>
         <div
-          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 mb-3 font-bold bg-gray-300"
+          class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 mb-3 font-bold bg-gray-300"
         >
           <div>School & College</div>
-          <!-- <div><i class="fa-solid fa-check text-lg"></i></div> -->
+          <div class="hidden"><i class="fa-solid fa-check text-lg"></i></div>
         </div>
         <div
           class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 mb-3 font-bold bg-gray-300 text-gray-600"
@@ -152,17 +161,24 @@
       <!-- IMPOSTOR -->
       <div>
         <h2 class="text-xl font-bold mb-2 text-gray-200">Impostor</h2>
-        <p class="mb-3 text-gray-300">1 impostor per 3 players is ideal</p>
+        <p class="mb-3 text-gray-300">Ideally 1 impostor per 3 players</p>
 
-        <div class="grid grid-cols-2 gap-4 w-full mb-3 font-bold text-gray-800">
-          <div
-            class="border border-gray-800 rounded-xl shadow-lg py-3 px-3 bg-[#1A7A7A] text-white"
+        <div
+          class="grid grid-cols-2 gap-4 w-full mb-3 font-bold text-gray-800"
+          id="impostorcount-container"
+        >
+          <button
+            class="border border-gray-800 rounded-xl shadow-lg py-3 px-3 bg-[#1a7a7a] text-white"
+            data-count="1"
           >
             1 Impostor
-          </div>
-          <div class="border border-gray-800 rounded-xl shadow-lg py-3 px-3 bg-gray-300">
+          </button>
+          <button
+            class="border border-gray-800 rounded-xl shadow-lg py-3 px-3 bg-gray-300"
+            data-count="2"
+          >
             2 Impostors
-          </div>
+          </button>
         </div>
       </div>
       <!-- Timer -->
@@ -173,12 +189,18 @@
         <div
           class="mb-3 font-bold text-gray-600 w-full flex justify-center items-center rounded-xl shadow-lg py-3 px-3 bg-[#1A7A7A] text-white"
         >
-          <div class="flex gap-2 text-gray-600 flex items-center">
-            <button class="w-7 h-7 rounded-full bg-[#1e2939] grid place-items-center">
+          <div class="flex gap-2 text-gray-600 flex items-center" id="timer-container">
+            <button
+              class="w-7 h-7 rounded-full bg-[#1e2939] grid place-items-center active:bg-gray-700"
+              id="timer-minus-btn"
+            >
               <i class="fa-solid fa-minus text-white text-sm"></i>
             </button>
-            <div class="font-bold text-white">2:00</div>
-            <button class="w-7 h-7 rounded-full bg-[#1e2939] grid place-items-center">
+            <div class="font-bold text-white"><span id="timer-span">2:00</span></div>
+            <button
+              class="w-7 h-7 rounded-full bg-[#1e2939] grid place-items-center active:bg-gray-700"
+              id="timer-add-btn"
+            >
               <i class="fa-solid fa-plus text-white text-sm"></i>
             </button>
           </div>
@@ -197,12 +219,14 @@
       <!-- Start overlay -->
       <div class="sticky bottom-4 w-full max-w-xl flex items-center mx-auto">
         <button
-          class="button hover:bg-gray-200 font-bold py-4 w-full px-10 shadow-xl rounded-xl bg-[#B6174B] text-white text-lg"
+          class="button active:bg-gray-300 active:text-gray-900 font-bold py-4 w-full px-10 shadow-xl rounded-xl bg-[#B6174B] text-white text-lg hidden"
+          id="start-button"
         >
           <i class="fa-solid fa-play mr-2"></i>
           Start Game
         </button>
       </div>
     </section>
+    <script src="impostor-setup.js"></script>
   </body>
 </html>
