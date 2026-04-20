@@ -26,8 +26,8 @@
       </section>
       <br />
       <!-- CARDS -->
-      <section class="card-section mx-auto my-auto">
-        <div class="card shown-card">
+      <section class="card-section mx-auto my-auto" id="card-container">
+        <!-- <div class="card shown-card">
           <div class="content">
             <div class="front bg-green-500">
               <h2 class="text-4xl font-bold text-center text-gray-900">John Mayer</h2>
@@ -70,13 +70,15 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </section>
       <button
-        class="bg-gray-200 py-4 px-4 rounded-4xl shadow-xl active:bg-gray-300 transition-colors w-70 mx-auto text-lg font-semibold self-end text-gray-900 mt-auto mb-8"
+        class="bg-gray-200 py-4 px-4 rounded-4xl shadow-xl active:bg-gray-300 transition-colors w-70 mx-auto text-lg font-bold self-end text-gray-900 mt-auto mb-8 translate-y-[10rem] transition-transform duration-300 ease-in-out"
+        id="nextcard-button"
       >
         Next Player
       </button>
     </section>
+    <script type="module" src="rolecards.js"></script>
   </body>
 </html>

@@ -26,7 +26,7 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 
   transition:
-    transform 0.4s,
+    transform 0.2s,
     box-shadow 0.4s;
   transform-style: preserve-3d;
   transition-timing-function: ease-in-out;
@@ -34,7 +34,7 @@
 
 .card:active .content {
   transform: rotateY(180deg) scale(1.05);
-  transition: transform 0.5s;
+  transition: transform 0.3s;
 }
 
 .card:active .content .front {
@@ -62,7 +62,7 @@
 }
 
 .card {
-  transform: translateX(calc((73rem / 2 + var(--card-width) / 2)));
+  transform: translateX(calc(-1 * (73rem / 2 + var(--card-width) / 2)));
   transition: all 0.5s ease-in-out;
 }
 
@@ -71,5 +71,5 @@
 }
 .shown-card ~ .card {
   transition: all 0.5s ease-in-out;
-  transform: translateX(calc(-1 * (73rem / 2 + var(--card-width) / 2)));
+  transform: translateX(calc(1 * (73rem / 2 + var(--card-width) / 2)));
 }

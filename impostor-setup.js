@@ -3,18 +3,15 @@
 gameData = {
   players: ["1", "2", "3"],
   categories: [],
+  finalCategory: null,
   impostorCount: 1,
   time: 2,
+  impostorIndexes: [],
+  word: null,
+  hint: null,
 };
 
-//START BUTTON
-const startButton = document.getElementById("start-button");
-
-startButton.addEventListener("click", () => {
-  window.location.href = "rolecards.html";
-});
-
-//asdas
+//Some stuff
 
 function saveStatus() {
   sessionStorage.setItem("gameData", JSON.stringify(gameData));
@@ -22,14 +19,20 @@ function saveStatus() {
   console.log(JSON.parse(sessionStorage.getItem("gameData")));
 }
 
+//START BUTTON
+const startButton = document.getElementById("start-button");
+
+startButton.addEventListener("click", () => {
+  saveStatus();
+  window.location.href = "rolecards.html";
+});
+
 function showStartButton() {
   if (gameData.players.length >= 3 && gameData.categories.length >= 1) {
     startButton.classList.remove("hidden");
-    console.log("asda");
   } else {
     startButton.classList.add("hidden");
   }
-  console.log("asdasdasdasdasa");
 }
 
 // PLAYER
@@ -115,9 +118,11 @@ function assignCategories() {
   categoriesArray = [];
   categoryItems.forEach((item) => {
     if (item.classList.contains("selected-item")) {
-      categoriesArray.push(item);
+      // console.log(item.dataset.category);
+      categoriesArray.push(item.dataset.category);
     }
   });
+  console.log(categoriesArray);
   gameData.categories = categoriesArray;
   showStartButton();
 }
