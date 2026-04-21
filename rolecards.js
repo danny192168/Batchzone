@@ -2,21 +2,11 @@ import { wordList } from "./wordlist.js";
 
 function getLocalGameData() {
   let data = JSON.parse(sessionStorage.getItem("gameData"));
-  if (data) {
-    console.log("200");
-    return data;
-  } else {
-    console.log("404");
-    window.location.href = "impostor.html";
-  }
+  console.log(data ? "200" : "404");
+  return data || ((window.location.href = "impostor.html"), false);
 }
 
-let gameData = getLocalGameData() || {
-  players: ["1", "2", "3"],
-  categories: [],
-  impostorCount: 1,
-  time: 2,
-};
+let gameData = getLocalGameData();
 
 let cardColors = ["red", "orange", "yellow", "green", "blue", "indigo", "purple", "pink"];
 
