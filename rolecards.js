@@ -148,4 +148,20 @@ cards.forEach((card) => {
     clearTimeout(startButtonTimeout);
     console.log("up");
   });
+
+  // mobile
+  card.addEventListener("touchstart", () => {
+    console.log("down");
+    startButtonTimeout = setTimeout(() => dispBtn(true), 400);
+  });
+
+  card.addEventListener("touchend", () => {
+    clearTimeout(startButtonTimeout);
+    console.log("up");
+  });
+
+  card.addEventListener("touchcancel", () => {
+    clearTimeout(startButtonTimeout);
+    console.log("touch canceled");
+  });
 });
