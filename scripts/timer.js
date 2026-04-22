@@ -4,13 +4,6 @@ function getLocalGameData() {
   return data || ((window.location.href = "setup.html"), false);
 }
 
-// Source - https://stackoverflow.com/a/7525760
-// Posted by Tower, modified by community. See post 'Timeline' for change history
-// Retrieved 2026-04-23, License - CC BY-SA 3.0
-
-var elem = document.documentElement; // Make the body go full screen.
-requestFullScreen(elem);
-
 // DOM
 
 let gameData = getLocalGameData();
