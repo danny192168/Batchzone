@@ -1,7 +1,7 @@
 function getLocalGameData() {
   let data = JSON.parse(sessionStorage.getItem("gameData"));
   console.log(data ? "200" : "404");
-  return data || ((window.location.href = "impostor.html"), false);
+  return data || ((window.location.href = "setup.html"), false);
 }
 
 // DOM
@@ -9,8 +9,6 @@ function getLocalGameData() {
 let gameData = getLocalGameData();
 
 sessionStorage.getItem(gameData);
-
-gameData.time = 0.05;
 
 const container = document.getElementById("container");
 
@@ -44,10 +42,6 @@ setTimeout(() => {
     noticeBox.classList.add("hidden");
   }, 4000);
 }, 1000);
-
-backBtn.addEventListener("click", () => {
-  window.location.href = "impostor.html";
-});
 
 function endRound() {
   timerBox.innerText = "Time's Up!!";
@@ -102,6 +96,10 @@ const pausedButtonContainer = document.querySelector(".paused-button-container")
 
 const resumeButton = document.getElementById("resume-button");
 const voteButton = document.getElementById("vote-button");
+
+voteButton.onclick = () => {
+  window.location.href = "vote.html";
+};
 
 //I'll use canvas since js and css isn't partcipating. I used Meta here
 function toggleAnimateLava() {

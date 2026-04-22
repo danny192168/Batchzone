@@ -6,7 +6,7 @@ gameData = {
   finalCategory: null,
   impostorCount: 1,
   time: 2,
-  impostorIndexes: [],
+  impostorIndices: [],
   word: null,
   hint: null,
 };

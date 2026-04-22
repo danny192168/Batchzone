@@ -32,12 +32,14 @@
   transition-timing-function: ease-in-out;
 }
 
-.card:active .content {
+.card:active .content,
+.card.active .content {
   transform: rotateY(180deg) scale(1.05);
   transition: transform 0.3s;
 }
 
-.card:active .content .front {
+.card:active .content .front,
+.card.active .content {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 

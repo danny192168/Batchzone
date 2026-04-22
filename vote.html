@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vote</title>
-    <link rel="stylesheet" href="index.css" />
-    <link href="./output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <link href="styles/output.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -16,39 +16,35 @@
   </head>
   <body class="bg-[#1E2939] text-white overflow-hidden">
     <section
-      class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex flex-col gap-6 min-h-screen relative z-10"
+      class="transition-transform duration-[1s] max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex flex-col gap-6 min-h-screen relative z-10"
       id="content-1"
     >
       <div class="text-center mt-5">
         <h1 class="font-bold text-2xl mb-4">Who's the Impostor?</h1>
         <p class="text-gray-300">Decide who to vote and submit it when it's ready</p>
       </div>
-      <div class="flex flex-col gap-4 text-white" id="card-container">
-        <div
-          class="bg-white shadow-lg py-3 px-4 font-bold rounded-xl border-2 border-[#1A7A7A] text-gray-900"
-        >
-          Steve Vai
-        </div>
-        <div class="bg-[#1A7A7A] shadow-lg py-3 px-4 font-bold rounded-xl">Steve Vai</div>
-        <div class="bg-[#1A7A7A] shadow-lg py-3 px-4 font-bold rounded-xl">Steve Vai</div>
-        <div class="bg-[#1A7A7A] shadow-lg py-3 px-4 font-bold rounded-xl">Steve Vai</div>
-      </div>
+      <div class="flex flex-col gap-4 text-white" id="player-card-container"></div>
       <button
-        class="p-4 bg-white w-60 rounded-xl shadow-lg font-bold text-gray-900 absolute left-1/2 -translate-x-1/2 bottom-10"
-        id="submit-button"
+        class="p-4 bg-white w-60 rounded-xl shadow-lg font-bold text-gray-900 absolute left-1/2 -translate-x-1/2 bottom-10 transform translate-y-[10rem] transition-transform duration-[0.5s]"
+        id="submit-vote-button"
       >
         Submit Vote
       </button>
     </section>
     <section
-      class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex flex-col gap-6 min-h-screen absolute z-10"
+      class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex flex-col gap-6 min-h-screen transform translate-y-[100%] transition-transform duration-[1s]"
       id="content-2"
     >
       <div class="text-center mt-5">
         <h3 class="font-bold text-2xl mb-4">Results</h3>
       </div>
-      <!-- <div class="bg-gray-300 shadow-lg p-5 text-gray-900 rounded-xl max-w-[780px] mx-auto my-auto">
-        <h2 class="text-xl font-bold text-center mb-2">James is not the Impostor</h2>
+      <div
+        class="bg-gray-300 shadow-lg p-5 text-gray-900 rounded-xl max-w-[780px] mx-auto my-auto"
+        id="result-1"
+      >
+        <h2 class="text-xl font-bold text-center mb-2">
+          <span id="voted-name-span">XXXXX</span> is not the Impostor
+        </h2>
         <div class="text-center text-4xl mb-2">
           <i class="fa-solid fa-xmark text-[#B6174B]"></i>
         </div>
@@ -56,30 +52,46 @@
           The impostor is still in the group. Proceed to next round or let the impostor take the
           win.
         </p>
+        <h2 class="text-xl font-bold text-center mb-4 text-gray-600" id="impostorsleft-display">
+          Secret impostors left
+        </h2>
         <div class="text-white grid grid-cols-2 gap-2">
-          <button class="bg-[#B6174B] p-2 shadow-lg rounded-xl font-bold active:bg-[#8a123a]">
+          <button
+            class="bg-[#B6174B] p-2 shadow-lg rounded-xl font-bold active:bg-[#8a123a]"
+            id="new-game-button"
+          >
             New Game
           </button>
-          <button class="bg-[#1A7A7A] p-2 shadow-lg rounded-xl font-bold active:bg-[#156565]">
+          <button
+            class="bg-[#1A7A7A] p-2 shadow-lg rounded-xl font-bold active:bg-[#156565]"
+            id="new-round-button"
+          >
             Next Round
           </button>
         </div>
-      </div> -->
-      <div class="flex flex-col gap-5 mx-auto my-auto shadow-lg">
+      </div>
+      <div class="flex flex-col gap-5 mx-auto my-auto shadow-lg hidden" id="result-2">
         <div
           class="bg-gray-300 shadow-lg p-5 text-gray-900 rounded-xl max-w-[min(780px,100%)] w-full mx-auto my-auto"
         >
-          <h2 class="text-xl font-bold text-center mb-2">James is the Impostor</h2>
-          <p class="mb-4">Congrats!! 🎉 The impostore had been caught.</p>
+          <h2 class="text-xl font-bold text-center mb-2">
+            <span id="impostor-name-span">Secret</span>
+            <!-- The Impostor won the game -->
+          </h2>
+          <p class="mb-4" id="text-final-display">Congrats!! 🎉 The impostor had been caught.</p>
+          <!-- <p class="mb-4">The Impostors won the game 😳÷</p> -->
           <!-- <div class="text-center text-6xl text-green-700">
             <i class="fa-solid fa-circle-check"></i>
           </div> -->
-          <h2 class="text-xl font-bold text-center mb-4 text-gray-600">Secret Word: Banana</h2>
+          <h2 class="text-xl font-bold text-center mb-4 text-gray-600">
+            Secret Word: <span id="word-display">Banana</span>
+          </h2>
           <button class="bg-gray-900 p-2 shadow-lg rounded-xl font-bold w-full text-white">
             New Game
           </button>
         </div>
       </div>
     </section>
+    <script src="scripts/vote.js"></script>
   </body>
 </html>

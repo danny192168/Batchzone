@@ -3,7 +3,7 @@ import { wordList } from "./wordlist.js";
 function getLocalGameData() {
   let data = JSON.parse(sessionStorage.getItem("gameData"));
   console.log(data ? "200" : "404");
-  return data || ((window.location.href = "impostor.html"), false);
+  return data || ((window.location.href = "setup.html"), false);
 }
 
 let gameData = getLocalGameData();
@@ -23,26 +23,16 @@ function getRandomIndexes(array, maxCount) {
   let indexArray = [];
   while (!(indexArray.length >= maxCount)) {
     let randomPos = random(0, array.length - 1);
-    console.log(
-      "current size: ",
-      indexArray.length + 1,
-      "Max Count:",
-      maxCount,
-      "generated pos",
-      randomPos,
-    );
     if (!indexArray.includes(randomPos)) {
       indexArray.push(randomPos);
     }
   }
-  console.log(indexArray);
   return indexArray;
 }
 
 function assignRandomWord() {
   let randomCategory = gameData.categories[random(0, gameData.categories.length - 1)];
   let categoryWordsData = wordList[randomCategory];
-  console.log(wordList, randomCategory, "😳", wordList[randomCategory]);
   let categoryWordsArray = categoryWordsData[0];
   let categoryHintsArray = categoryWordsData[0];
   let randomArrayPos = random(0, categoryWordsArray.length - 1);
@@ -57,7 +47,7 @@ function createCardElements() {
     let element = document.createElement("div");
     element.classList.add("card");
     pos == 0 ? element.classList.add("shown-card") : undefined;
-    let isImpostor = gameData.impostorIndexes.includes(pos);
+    let isImpostor = gameData.impostorIndices.includes(pos);
     element.innerHTML = `
            <div class="content">
               <div class="front bg-${cardColors[pos] || cardColors - cardColors.length + pos}-500">
@@ -91,12 +81,14 @@ function createCardElements() {
 }
 
 function runRolecards() {
-  gameData.impostorIndexes = getRandomIndexes(gameData.players, gameData.impostorCount);
+  gameData.impostorIndices = getRandomIndexes(gameData.players, gameData.impostorCount);
   assignRandomWord();
   createCardElements();
 }
-
+console.log(gameData);
 runRolecards();
+sessionStorage.setItem("gameData", JSON.stringify(gameData));
+console.log(gameData);
 
 let isLastCard = false;
 
@@ -113,16 +105,13 @@ function dispBtn(isShow = true) {
 //ROTATE
 
 function rotateCard() {
-  console.log(isLastCard);
   if (!isLastCard) {
     dispBtn(false);
     var currentCard = document.querySelector(".shown-card");
     var nextCard = currentCard.nextElementSibling;
     currentCard.classList.remove("shown-card");
     nextCard.classList.add("shown-card");
-    console.log(nextCard, nextCard.nextElementSibling);
     isLastCard = nextCard.nextElementSibling === null;
-    console.log("is", isLastCard);
     if (isLastCard) {
       nextCardBtn.innerText = "Start Game";
       nextCardBtn.classList.add("bg-gray-900", "text-white", "active:text-gray-900");
@@ -141,27 +130,22 @@ let cards = document.querySelectorAll(".card");
 
 cards.forEach((card) => {
   card.addEventListener("mousedown", () => {
-    console.log("down");
     startButtonTimeout = setTimeout(dispBtn, 400, true);
   });
   card.addEventListener("mouseup", () => {
     clearTimeout(startButtonTimeout);
-    console.log("up");
   });
 
   // mobile
   card.addEventListener("touchstart", () => {
-    console.log("down");
     startButtonTimeout = setTimeout(() => dispBtn(true), 400);
   });
 
   card.addEventListener("touchend", () => {
     clearTimeout(startButtonTimeout);
-    console.log("up");
   });
 
   card.addEventListener("touchcancel", () => {
     clearTimeout(startButtonTimeout);
-    console.log("touch canceled");
   });
 });

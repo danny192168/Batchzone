@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game Started</title>
-    <link rel="stylesheet" href="index.css" />
-    <link href="./output.css" rel="stylesheet" />
+    <link href="styles/output.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -19,10 +18,11 @@
       class="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-5 flex flex-col gap-6 min-h-screen relative z-10"
       id="container"
     >
-      <section class="flex justify-between p-3" id="top-button-container">
-        <button class="text-2xl" id="back-button">
-          <i class="fa-solid fa-angle-left text-shadow-sm"></i>
-        </button>
+      <section class="flex justify-between p-3 text-gray-200" id="top-button-container">
+        <a href="setup.html"
+          ><button class="text-2xl" id="back-button">
+            <i class="fa-solid fa-angle-left text-shadow-sm"></i></button
+        ></a>
         <button class="text-2xl"><i class="fa-solid fa-circle-info text-shadow-sm"></i></button>
       </section>
       <div
@@ -68,6 +68,6 @@
     <div class="lava-box absolute w-full h-full top-0 transition-[top] duration-[1s]" id="lava-box">
       <canvas id="canvas"></canvas>
     </div>
-    <script src="timer.js"></script>
+    <script src="scripts/timer.js"></script>
   </body>
 </html>
