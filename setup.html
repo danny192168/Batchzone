@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guess the Impostor</title>
     <link rel="stylesheet" href="styles/impostor.css" />
+    <link rel="stylesheet" href="styles/setup.css" />
     <link href="styles/output.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo-icon.svg" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -21,34 +23,77 @@
         <div class="flex items-center gap-3 sm:gap-5">
           <button
             class="flex items-center text-gray-700 hover:text-[#1a7a7a] transition-colors text-sm sm:text-base"
+            id="info-button"
           >
             <i class="fa-solid fa-circle-info text-xl"></i>
             <!-- <span class="ml-1 hidden md:inline">Info</span> -->
           </button>
-          <!-- <button
-            class="flex items-center text-gray-700 hover:text-[#1a7a7a] transition-colors text-sm sm:text-base"
+          <div
+            class="info-card right-1/2 transform translate-x-[50%] translate-y-[-50%] top-[45%] absolute w-11/12 max-w-[50rem] min-h-1/5 bg-gray-900/99 shadow-xl px-4 py-5 rounded-lg z-10 hidden"
           >
-            <i class="fa-solid fa-lightbulb text-xl"></i>
-            <span class="ml-1 hidden md:inline">Suggestions</span>
-          </button> -->
-          <!-- <button
+            <h3 class="font-bold text-lg mb-3">Info</h3>
+            <p>
+              To shorten, you simply play the game the way that it would be blah blah blah. Ask the
+              guy beside you. Or just play along and understand it on the fly
+            </p>
+            <br />
+            <p>
+              But to clarify, in Guess the Impostor, everyone is given a card with a word that you
+              must take turn describing without saying the exact from the card. However, not everyon
+              receives a card with the word. The impostor reveives only a hint of what the word is.
+              The goal of the game is know these impostors and vote them out after a round of
+              describing the word. Else, the impostor wins.
+            </p>
+          </div>
+          <label
             class="flex items-center text-gray-700 hover:text-[#1a7a7a] transition-colors text-sm sm:text-base"
-          >
-            <i class="fa-solid fa-language text-xl"></i>
-            <span class="ml-1 hidden md:inline">Language</span>
-          </button> -->
-          <button
-            class="flex items-center text-gray-700 hover:text-[#1a7a7a] transition-colors text-sm sm:text-base"
+            for="toggle-box"
           >
             <i class="fa-solid fa-gear text-xl"></i>
             <!-- <span class="ml-1 hidden md:inline">Report</span> -->
-          </button>
-          <!-- <button
-            class="text-gray-600 px-4 sm:px-5 py-2 rounded-lg hover:bg-[#156565] transition-colors text-sm sm:text-base"
+          </label>
+          <input class="hidden" type="checkbox" id="toggle-box" />
+          <div
+            class="settings-card right-0 top-0 transform fixed z-100 w-11/12 w-[30rem] max-w-full min-h-dvh bg-gray-900/99 shadow-xl px-4 py-5 hidden"
           >
-            Login
-          </button> -->
+            <div class="flex items-center justify-center relative text-2xl active:text-gray-400">
+              <label class="absolute left-0" for="toggle-box"
+                ><i class="fa-solid fa-angle-left text-shadow-sm"></i
+              ></label>
+              <h3 class="font-bold text-white">Settings</h3>
+            </div>
+            <div class="flex flex-col mt-2 text-xl gap-2">
+              <a
+                href="mailto:support@yourapp.com?subject=Suggestion%20for%20Your%20Game&body=Hi,%20I%20have%20a%20suggestion%20for%20your%20app:%0A%0A%0A%3C%3C%20Please%20describe%20your%20suggestion%20here.%20%3E%3E"
+                ><button
+                  class="border-b border-gray-600 py-4 w-full flex items-center justify-start gap-2"
+                >
+                  <i class="fa-solid fa-lightbulb text-xl"></i>
+                  <span class="">Suggestions</span>
+                </button></a
+              >
+              <button
+                class="border-b border-gray-600 py-4 w-full flex items-center justify-start gap-2"
+              >
+                <i class="fa-solid fa-language"></i>
+                <span class="">Language</span>
+                <span class="text-sm text-gray-400">Coming soon</span>
+              </button>
+              <button
+                class="border-b border-gray-600 py-4 w-full flex items-center justify-start gap-2"
+                id="share-button"
+              >
+                <i class="fa-solid fa-share-nodes"></i>
+                <span class="">Share</span>
+              </button>
+            </div>
+          </div>
         </div>
+        <!-- <button
+          class="text-gray-600 px-4 sm:px-5 py-2 rounded-lg hover:bg-[#156565] transition-colors text-sm sm:text-base"
+        >
+          Login
+        </button> -->
       </div>
     </header>
     <!-- HERO -->
@@ -212,6 +257,10 @@
           Start Game
         </button>
       </div>
+    </section>
+    <!-- CUSTOM CATEGORY MODAL -->
+    <section>
+      <dialog></dialog>
     </section>
     <script src="scripts/setup.js"></script>
   </body>

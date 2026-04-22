@@ -192,3 +192,23 @@ timerMinusBtn.addEventListener("click", () => {
 timerAddBtn.addEventListener("click", () => {
   updateTime(0.5);
 });
+
+//SHARE
+const shareBtn = document.getElementById("share-button");
+
+shareBtn.addEventListener("click", async () => {
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: document.title,
+        url: window.location.href,
+      });
+    } catch (err) {
+      console.log("Share failed:", err.message);
+    }
+  } else {
+    // Fallback: copy URL to clipboard
+    navigator.clipboard.writeText(window.location.href);
+    alert("Link copied to clipboard!");
+  }
+});

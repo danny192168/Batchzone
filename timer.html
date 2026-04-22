@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game Started</title>
     <link href="styles/output.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo-icon.svg" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -23,7 +24,29 @@
           ><button class="text-2xl" id="back-button">
             <i class="fa-solid fa-angle-left text-shadow-sm"></i></button
         ></a>
-        <button class="text-2xl"><i class="fa-solid fa-circle-info text-shadow-sm"></i></button>
+        <div class="group">
+          <button class="text-2xl group-focus-within:visible focus:outline-none">
+            <i class="fa-solid fa-circle-info text-shadow-sm"></i>
+          </button>
+
+          <div
+            class="info-card hidden group-focus-within:block right-1/2 transform translate-x-[50%] translate-y-[-50%] top-[45%] absolute w-11/12 max-w-[50rem] min-h-1/5 bg-gray-900/99 shadow-xl px-4 py-5 rounded-lg z-10"
+          >
+            <h3 class="font-bold text-lg mb-3">Info</h3>
+            <p>
+              To shorten, you simply play the game the way that it would be blah blah blah. Ask the
+              guy beside you. Or just play along and understand it on the fly
+            </p>
+            <br />
+            <p>
+              But to clarify, in Guess the Impostor, everyone is given a card with a word that you
+              must take turn describing without saying the exact from the card. However, not everyon
+              receives a card with the word. The impostor reveives only a hint of what the word is.
+              The goal of the game is know these impostors and vote them out after a round of
+              describing the word. Else, the impostor wins.
+            </p>
+          </div>
+        </div>
       </section>
       <div
         class="absolute transform translate-x-[50%] right-[50%] top-20 flex flex-col items-center transition-opacity duration-[5s]"
