@@ -80,14 +80,16 @@ function displayTime() {
 
 displayTime();
 
-let timeInterval = setInterval(() => {
+function startTick() {
   currentTime -= 1000;
   displayTime();
   if (currentTime < 1) {
     endRound();
     clearInterval(timeInterval);
   }
-}, 1000);
+}
+
+let timeInterval = setInterval(startTick, 1000);
 
 //DOM
 const pauseButton = document.getElementById("pause-button");
@@ -174,9 +176,6 @@ pauseButton.addEventListener("click", () => {
 resumeButton.addEventListener("click", () => {
   pausedButtonContainer.classList.add("hidden");
   pauseButton.classList.remove("hidden");
-  timeInterval = setInterval(() => {
-    currentTime -= 1000;
-    displayTime();
-  }, 1000);
+  timeInterval = setInterval(startTick, 1000);
   toggleAnimateLava();
 });
