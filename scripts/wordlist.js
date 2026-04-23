@@ -1,18 +1,33 @@
 // first array is word, second is hint
-export let wordList = {
-  everyDayObjects: [
-    ["one", "two", "three", "four", "five", "six", "seven", "eight"],
+export const wordList = {
+  everydayObjects: [
+    ["1", "2", "3", "4", "5", "6", "7", "8"],
     ["isa", "dalawa", "tatlo", "apat", "lima", "anim", "pito", "walo"],
   ],
   foodAndDrinks: [
-    ["one", "two", "three", "four", "five", "six", "seven", "eight"],
+    ["1", "2", "3", "4", "5", "6", "7", "8"],
     ["isa", "dalawa", "tatlo", "apat", "lima", "anim", "pito", "walo"],
   ],
   animalsAndPlants: [
-    ["one", "two", "three", "four", "five", "six", "seven", "eight"],
+    ["1", "2", "3", "4", "5", "6", "7", "8"],
     ["isa", "dalawa", "tatlo", "apat", "lima", "anim", "pito", "walo"],
   ],
   schoolAndCollege: [
+    ["1", "2", "3", "4", "5", "6", "7", "8"],
+    ["isa", "dalawa", "tatlo", "apat", "lima", "anim", "pito", "walo"],
+  ],
+};
+
+export const customWordList = {
+  totalRandom: [
+    ["one", "two", "three", "four", "five", "six", "seven", "eight"],
+    ["isa", "dalawa", "tatlo", "apat", "lima", "anim", "pito", "walo"],
+  ],
+  insanity: [
+    ["one", "two", "three", "four", "five", "six", "seven", "eight"],
+    ["isa", "dalawa", "tatlo", "apat", "lima", "anim", "pito", "walo"],
+  ],
+  games: [
     ["one", "two", "three", "four", "five", "six", "seven", "eight"],
     ["isa", "dalawa", "tatlo", "apat", "lima", "anim", "pito", "walo"],
   ],

@@ -1,8 +1,10 @@
 //APRIL 19 started
+import { customWordList, wordList } from "./wordlist.js";
 
-gameData = {
+let gameData = {
   players: ["1", "2", "3"],
   categories: [],
+  customCategories: [],
   finalCategory: null,
   impostorCount: 1,
   time: 2,
@@ -12,6 +14,13 @@ gameData = {
 };
 
 //Some stuff
+
+function camelToRegular(camel) {
+  // Split camelCase at uppercase letters, then join with spaces
+  const spaced = camel.replace(/([a-z])([A-Z])/g, "$1 $2");
+  // Capitalize first letter of the whole string
+  return spaced.charAt(0).toUpperCase() + spaced.slice(1).toLowerCase();
+}
 
 function saveStatus() {
   sessionStorage.setItem("gameData", JSON.stringify(gameData));
@@ -28,7 +37,10 @@ startButton.addEventListener("click", () => {
 });
 
 function showStartButton() {
-  if (gameData.players.length >= 3 && gameData.categories.length >= 1) {
+  if (
+    gameData.players.length >= 3 &&
+    (gameData.categories.length > 0 || gameData.customCategories.length > 0)
+  ) {
     startButton.classList.remove("hidden");
   } else {
     startButton.classList.add("hidden");
@@ -45,7 +57,7 @@ let playerItems = playersContainer.querySelectorAll(".player-item");
 
 function assignPLayers() {
   playerItems = playersContainer.querySelectorAll(".player-item");
-  playerArray = [];
+  let playerArray = [];
   playerItems.forEach((item) => {
     playerArray.push(item.querySelector("div:first-child").innerText);
   });
@@ -111,19 +123,85 @@ playerInput.addEventListener("keydown", function (event) {
 });
 
 // CATEGORY
-const categoriesContainer = document.getElementById("categories-container");
-let categoryItems = categoriesContainer.querySelectorAll(".category-item");
+
+const categoryItemsContainer = document.getElementById("category-items-container");
+const customCategoryItemsContainer = document.getElementById("custom-category-items-container");
+
+//load category items
+
+for (const key in wordList) {
+  const value = wordList[key];
+
+  console.log("key: ", key, "VAlue", value);
+  let element = document.createElement("div");
+  element.dataset.category = key;
+  element.classList.add(
+    "category-item",
+    "flex",
+    "justify-between",
+    "w-full",
+    "rounded-xl",
+    "shadow-lg",
+    "overflow-hidden",
+    "border",
+    "border-gray-800",
+    "p-3",
+    "mb-3",
+    "font-bold",
+    "bg-gray-300",
+  );
+  element.innerHTML = `
+    <div>${camelToRegular(key)}</div>
+    <div class="hidden"><i class="fa-solid fa-check text-lg"></i></div>
+  `;
+  categoryItemsContainer.append(element);
+}
+
+for (const key in customWordList) {
+  let element = document.createElement("div");
+  element.dataset.category = key;
+  element.classList.add(
+    "custom-category-item",
+    "flex",
+    "justify-between",
+    "w-full",
+    "rounded-xl",
+    "shadow-lg",
+    "overflow-hidden",
+    "border",
+    "border-gray-800",
+    "p-3",
+    "mb-3",
+    "font-bold",
+    "bg-gray-300",
+  );
+  element.innerHTML = `
+    <div>${camelToRegular(key)}</div>
+    <div class="hidden"><i class="fa-solid fa-check text-lg"></i></div>
+  `;
+  customCategoryItemsContainer.append(element);
+}
+
+let categoryItems = categoryItemsContainer.querySelectorAll(".category-item");
+let customCategoryItems = customCategoryItemsContainer.querySelectorAll(".custom-category-item");
 
 function assignCategories() {
-  categoriesArray = [];
+  let categoriesArray = [];
+  let customCategoriesArray = [];
   categoryItems.forEach((item) => {
     if (item.classList.contains("selected-item")) {
       // console.log(item.dataset.category);
       categoriesArray.push(item.dataset.category);
     }
   });
-  console.log(categoriesArray);
+  customCategoryItems.forEach((item) => {
+    if (item.classList.contains("selected-item")) {
+      // console.log(item.dataset.category);
+      customCategoriesArray.push(item.dataset.category);
+    }
+  });
   gameData.categories = categoriesArray;
+  gameData.customCategories = customCategoriesArray;
   showStartButton();
 }
 
@@ -131,6 +209,12 @@ assignCategories();
 
 function setCategoryEvents() {
   categoryItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      item.classList.toggle("selected-item");
+      assignCategories();
+    });
+  });
+  customCategoryItems.forEach((item) => {
     item.addEventListener("click", () => {
       item.classList.toggle("selected-item");
       assignCategories();
@@ -179,7 +263,7 @@ const timerSpan = document.getElementById("timer-span");
 function updateTime(i) {
   let copy = { ...gameData };
   let output = (copy.time += i);
-  if (output >= 1 && output <= 10) {
+  if (output > 0 && output <= 10) {
     gameData.time += i;
     timerSpan.innerText = minutesToTime(gameData.time);
   }
@@ -211,4 +295,25 @@ shareBtn.addEventListener("click", async () => {
     navigator.clipboard.writeText(window.location.href);
     alert("Link copied to clipboard!");
   }
+});
+
+//SELECT CUSTOM MODAL
+const modal = document.getElementById("modal");
+const closeModalBtn = document.getElementById("close-modal-button");
+const addModalBtn = document.getElementById("add-modal-button");
+const selectCustomCard = document.getElementById("select-custom-card");
+selectCustomCard.addEventListener("click", () => {
+  modal.showModal();
+});
+
+closeModalBtn.addEventListener("click", () => {
+  modal.close();
+  customCategoryItems.forEach((item) => {
+    item.classList.remove("selected-item");
+  });
+  assignCategories();
+});
+
+addModalBtn.addEventListener("click", () => {
+  modal.close();
 });

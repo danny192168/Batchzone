@@ -1,4 +1,4 @@
-import { wordList } from "./wordlist.js";
+import { customWordList, wordList } from "./wordlist.js";
 
 function getLocalGameData() {
   let data = JSON.parse(sessionStorage.getItem("gameData"));
@@ -21,18 +21,28 @@ function random(min, max) {
 
 function getRandomIndexes(array, maxCount) {
   let indexArray = [];
-  while (!(indexArray.length >= maxCount)) {
+  let x;
+  while (!(indexArray.length > maxCount)) {
     let randomPos = random(0, array.length - 1);
+    x = randomPos;
     if (!indexArray.includes(randomPos)) {
       indexArray.push(randomPos);
     }
   }
+  console.log("IMPOSTOR: ", indexArray, array, array.length, "Random Pos: ", x);
   return indexArray;
 }
 
 function assignRandomWord() {
   let randomCategory = gameData.categories[random(0, gameData.categories.length - 1)];
-  let categoryWordsData = wordList[randomCategory];
+  let randomCustomCategory =
+    gameData.customCategories[random(0, gameData.customCategories.length - 1)];
+
+  let categoryWordsData =
+    [wordList[randomCategory], customWordList[randomCustomCategory]][random(0, 1)] ||
+    wordList[randomCategory];
+
+  console.log("category: ", categoryWordsData);
   let categoryWordsArray = categoryWordsData[0];
   let categoryHintsArray = categoryWordsData[0];
   let randomArrayPos = random(0, categoryWordsArray.length - 1);
@@ -85,7 +95,6 @@ function runRolecards() {
   assignRandomWord();
   createCardElements();
 }
-console.log(gameData);
 runRolecards();
 sessionStorage.setItem("gameData", JSON.stringify(gameData));
 console.log(gameData);

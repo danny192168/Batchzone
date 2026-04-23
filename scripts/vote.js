@@ -66,6 +66,7 @@ function submitVote() {
     console.log("lose", gameData.impostorIndices);
     result1.classList.add("hidden");
     result2.classList.remove("hidden");
+    result2.classList.add("flex");
     textFinalDisplay.innerText = `The Impostor${gameData.impostorCount > 1 ? "s" : ""} won the game 😳`;
     console.log(textFinalDisplay);
   }
@@ -75,6 +76,7 @@ function submitVote() {
     console.log("win");
     result1.classList.add("hidden");
     result2.classList.remove("hidden");
+    result2.classList.add("flex");
   }
   let impostors = "";
   //My dirty code 💪

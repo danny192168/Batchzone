@@ -40,9 +40,11 @@
             <p>
               But to clarify, in Guess the Impostor, everyone is given a card with a word that you
               must take turn describing without saying the exact from the card. However, not everyon
-              receives a card with the word. The impostor reveives only a hint of what the word is.
+              receives a card with the word. The impostor receives only a hint of what the word is.
               The goal of the game is know these impostors and vote them out after a round of
-              describing the word. Else, the impostor wins.
+              describing the word. Else, the impostor wins. If you're the impostor and you
+              confidently guessed the word, you can win by raising your hand and saying it. If it's
+              wrong however, you lose.
             </p>
           </div>
           <label
@@ -118,19 +120,19 @@
           id="players-container"
         >
           <div
-            class="player-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 font-bold bg-gray-300"
+            class="player-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 font-bold bg-gray-300"
           >
             <div>Player 1</div>
             <div class="active:text-gray-500"><i class="fa-solid fa-xmark text-lg"></i></div>
           </div>
           <div
-            class="player-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 font-bold bg-gray-300"
+            class="player-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 font-bold bg-gray-300"
           >
             <div class="active:text-gray-500">Player 2</div>
             <div><i class="fa-solid fa-xmark text-lg"></i></div>
           </div>
           <div
-            class="player-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 font-bold bg-gray-300"
+            class="player-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 font-bold bg-gray-300"
           >
             <div class="active:text-gray-500">Player 3</div>
             <div><i class="fa-solid fa-xmark text-lg"></i></div>
@@ -162,36 +164,10 @@
       <div class="text-gray-800" id="categories-container">
         <h2 class="text-xl font-bold mb-2 text-gray-200">Categories</h2>
         <p class="mb-3 text-gray-300">Select categories below or from customs</p>
+        <div id="category-items-container"></div>
         <div
-          class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 mb-3 font-bold bg-gray-300 selected-item"
-          data-category="everyDayObjects"
-        >
-          <div>Everyday Objects</div>
-          <div class="hidden"><i class="fa-solid fa-check text-lg"></i></div>
-        </div>
-        <div
-          class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 mb-3 font-bold bg-gray-300"
-          data-category="foodAndDrinks"
-        >
-          <div>Food and Drinks</div>
-          <div class="hidden"><i class="fa-solid fa-check text-lg"></i></div>
-        </div>
-        <div
-          class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 mb-3 font-bold bg-gray-300"
-          data-category="animalAndPlants"
-        >
-          <div>Animals and Plants</div>
-          <div class="hidden"><i class="fa-solid fa-check text-lg"></i></div>
-        </div>
-        <div
-          class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 mb-3 font-bold bg-gray-300"
-          data-category="schoolAndColllege"
-        >
-          <div>School & College</div>
-          <div class="hidden"><i class="fa-solid fa-check text-lg"></i></div>
-        </div>
-        <div
-          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 py-3 px-3 mb-3 font-bold bg-gray-300 text-gray-600"
+          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 mb-3 font-bold bg-gray-300 text-gray-600"
+          id="select-custom-card"
         >
           <div>Select Custom</div>
           <div>
@@ -210,13 +186,13 @@
           id="impostorcount-container"
         >
           <button
-            class="border border-gray-800 rounded-xl shadow-lg py-3 px-3 bg-[#1a7a7a] text-white"
+            class="border border-gray-800 rounded-xl shadow-lg p-3 bg-[#1a7a7a] text-white"
             data-count="1"
           >
             1 Impostor
           </button>
           <button
-            class="border border-gray-800 rounded-xl shadow-lg py-3 px-3 bg-gray-300"
+            class="border border-gray-800 rounded-xl shadow-lg p-3 bg-gray-300"
             data-count="2"
           >
             2 Impostors
@@ -229,7 +205,7 @@
         <p class="mb-3 text-gray-200">Timer for each round</p>
 
         <div
-          class="mb-3 font-bold text-gray-600 w-full flex justify-center items-center rounded-xl shadow-lg py-3 px-3 bg-[#1A7A7A] text-white"
+          class="mb-3 font-bold text-gray-600 w-full flex justify-center items-center rounded-xl shadow-lg p-3 bg-[#1A7A7A] text-white"
         >
           <div class="flex gap-2 text-gray-600 flex items-center" id="timer-container">
             <button
@@ -259,9 +235,30 @@
       </div>
     </section>
     <!-- CUSTOM CATEGORY MODAL -->
-    <section>
-      <dialog></dialog>
-    </section>
-    <script src="scripts/setup.js"></script>
+
+    <dialog
+      id="modal"
+      class="fixed top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%] backdrop:bg-black/50 bg-gray-800 p-6 max-w-[90vw] w-md rounded-lg shadow-xl text-white outline-none"
+    >
+      <h2 class="font-bold mb-4 text-xl">Select Custom Category</h2>
+      <div class="flex flex-col text-gray-800 font-bold" id="custom-category-items-container"></div>
+      <a href="wordlist-panel.html" class="outline-none"
+        ><button
+          class="bg-gray-200 outline-none rounded-xl p-3 font-bold w-full mb-3 text-gray-800"
+        >
+          Create Your Own
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </a>
+      <div class="grid grid-cols-2 gap-4">
+        <button class="bg-[#b6174b] outline-none rounded-xl p-3 font-bold" id="close-modal-button">
+          clear
+        </button>
+        <button class="bg-[#1a7a7a] outline-none rounded-xl p-3 font-bold" id="add-modal-button">
+          add
+        </button>
+      </div>
+    </dialog>
+    <script type="module" src="scripts/setup.js"></script>
   </body>
 </html>
