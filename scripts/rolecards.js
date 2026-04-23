@@ -22,7 +22,7 @@ function random(min, max) {
 function getRandomIndexes(array, maxCount) {
   let indexArray = [];
   let x;
-  while (!(indexArray.length > maxCount)) {
+  while (!(indexArray.length >= maxCount)) {
     let randomPos = random(0, array.length - 1);
     x = randomPos;
     if (!indexArray.includes(randomPos)) {
@@ -44,7 +44,7 @@ function assignRandomWord() {
 
   console.log("category: ", categoryWordsData);
   let categoryWordsArray = categoryWordsData[0];
-  let categoryHintsArray = categoryWordsData[0];
+  let categoryHintsArray = categoryWordsData[1];
   let randomArrayPos = random(0, categoryWordsArray.length - 1);
   let randomWord = categoryWordsArray[randomArrayPos];
   gameData.finalCategory = randomCategory;
