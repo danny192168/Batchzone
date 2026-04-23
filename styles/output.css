@@ -967,6 +967,15 @@
   .border-white {
     border-color: var(--color-white);
   }
+  .bg-\[\#0A0F19\] {
+    background-color: #0A0F19;
+  }
+  .bg-\[\#0C1014\] {
+    background-color: #0C1014;
+  }
+  .bg-\[\#0F141D\] {
+    background-color: #0F141D;
+  }
   .bg-\[\#1A7A7A\] {
     background-color: #1A7A7A;
   }
@@ -985,8 +994,20 @@
   .bg-\[\#1e2939\] {
     background-color: #1e2939;
   }
+  .bg-\[\#131A24\] {
+    background-color: #131A24;
+  }
+  .bg-\[\#141B25\] {
+    background-color: #141B25;
+  }
   .bg-\[\#151D28\] {
     background-color: #151D28;
+  }
+  .bg-\[\#252D38\] {
+    background-color: #252D38;
+  }
+  .bg-\[\#18212d\] {
+    background-color: #18212d;
   }
   .bg-\[\#B6174B\] {
     background-color: #B6174B;
