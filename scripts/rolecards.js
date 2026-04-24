@@ -106,6 +106,7 @@ let isLastCard = false;
 const nextCardBtn = document.getElementById("nextcard-button");
 
 function dispBtn(isShow = true) {
+  nextCardBtn.disable = isShow ? false : true;
   isShow
     ? nextCardBtn.classList.remove("translate-y-[10rem]")
     : nextCardBtn.classList.add("translate-y-[10rem]");
