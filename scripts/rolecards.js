@@ -123,7 +123,8 @@ function rotateCard() {
     isLastCard = nextCard.nextElementSibling === null;
     if (isLastCard) {
       nextCardBtn.innerText = "Start Game";
-      nextCardBtn.classList.add("bg-gray-900", "text-white", "active:text-gray-900");
+      nextCardBtn.classList.remove("bg-gray-200", "active:text-gray-300");
+      nextCardBtn.classList.add("bg-black", "text-white", "active:text-gray-700");
     }
   } else {
     window.location.href = "timer.html";

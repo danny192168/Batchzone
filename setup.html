@@ -21,42 +21,47 @@
       <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
         <img src="images/logo.svg" alt="BATCHZONE" class="h-7 sm:h-9" />
         <div class="flex items-center gap-3 sm:gap-5">
-          <button
-            class="flex items-center text-gray-700 hover:text-[#1a7a7a] transition-colors text-sm sm:text-base"
-            id="info-button"
-          >
-            <i class="fa-solid fa-circle-info text-xl"></i>
-            <!-- <span class="ml-1 hidden md:inline">Info</span> -->
-          </button>
-          <div
-            class="info-card right-1/2 transform translate-x-[50%] translate-y-[-50%] top-[45%] absolute w-11/12 max-w-[50rem] min-h-1/5 bg-gray-900/99 shadow-xl px-4 py-5 rounded-lg z-10 hidden"
-          >
-            <h3 class="font-bold text-lg mb-3">Info</h3>
-            <p>
-              To shorten, you simply play the game the way that it would be blah blah blah. Ask the
-              guy beside you. Or just play along and understand it on the fly
-            </p>
-            <br />
-            <p>
-              But to clarify, in Guess the Impostor, everyone is given a card with a word that you
-              must take turn describing without saying the exact from the card. However, not everyon
-              receives a card with the word. The impostor receives only a hint of what the word is.
-              The goal of the game is know these impostors and vote them out after a round of
-              describing the word. Else, the impostor wins. If you're the impostor and you
-              confidently guessed the word, you can win by raising your hand and saying it. If it's
-              wrong however, you lose.
-            </p>
+          <div class="group">
+            <button
+              class="flex items-center text-gray-700 hover:text-[#1a7a7a] transition-colors text-sm sm:text-base"
+            >
+              <i class="fa-solid fa-circle-info text-xl text-shadow-sm"></i>
+            </button>
+
+            <div
+              class="fixed inset-0 bg-gray-700/40 z-5 opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none"
+            ></div>
+
+            <div
+              class="info-card hidden group-focus-within:block right-1/2 transform translate-x-[50%] translate-y-[-50%] top-[45%] absolute w-11/12 max-w-200 min-h-1/5 bg-gray-900 shadow-xl px-4 py-5 rounded-lg z-10"
+            >
+              <h3 class="font-bold text-lg mb-3">Info</h3>
+              <p>
+                To shorten, you simply play the game the way that it would be blah blah blah. Ask
+                the guy beside you. Or just play along and understand it on the fly
+              </p>
+              <br />
+              <p>
+                But to clarify, in Guess the Impostor, everyone is given a card with a word that you
+                must take turn describing without saying the exact from the card. However, not
+                everyon receives a card with the word. The impostor receives only a hint of what the
+                word is. The goal of the game is know these impostors and vote them out after a
+                round of describing the word. Else, the impostor wins. If you're the impostor and
+                you confidently guessed the word, you can win by raising your hand and saying it. If
+                it's wrong however, you lose.
+              </p>
+            </div>
           </div>
           <label
             class="flex items-center text-gray-700 hover:text-[#1a7a7a] transition-colors text-sm sm:text-base"
             for="toggle-box"
           >
-            <i class="fa-solid fa-gear text-xl"></i>
+            <i class="fa-solid fa-gear text-xl text-shadow-sm"></i>
             <!-- <span class="ml-1 hidden md:inline">Report</span> -->
           </label>
           <input class="hidden" type="checkbox" id="toggle-box" />
           <div
-            class="settings-card right-0 top-0 transform fixed z-100 w-11/12 w-[30rem] max-w-full min-h-dvh bg-gray-900/99 shadow-xl px-4 py-5 hidden"
+            class="settings-card right-0 top-0 transform fixed z-100 w-120 max-w-full min-h-dvh bg-gray-900/99 shadow-xl px-4 py-5 hidden"
           >
             <div class="flex items-center justify-center relative text-2xl active:text-gray-400">
               <label class="absolute left-0" for="toggle-box"
@@ -99,7 +104,14 @@
       </div>
     </header>
     <!-- HERO -->
-    <section class="max-w-5xl mx-auto px-4 sm:px-6 py-6 pb-3 sm:py-12">
+    <div class="max-w-5xl mx-auto flex justify-between p-3 mt-3 text-gray-200">
+      <a href="index.html"
+        ><button class="text-2xl" id="back-button">
+          <i class="fa-solid fa-angle-left text-shadow-sm"></i></button
+      ></a>
+      </div>
+    </div>
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 mb-5 pb-3 sm:mb-10">
       <h1 class="text-3xl sm:text-5xl tracking-tight text-white text-center font-bold">
         Guesss the Impostor
       </h1>

@@ -59,7 +59,7 @@
 .back {
   color: white;
   --tw-bg-opacity: 1;
-  background-color: rgb(12, 16, 22);
+  background-color: rgb(0, 0, 0);
   transform: rotateY(180deg);
 }
 

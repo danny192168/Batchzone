@@ -30,7 +30,11 @@
           </button>
 
           <div
-            class="info-card hidden group-focus-within:block right-1/2 transform translate-x-[50%] translate-y-[-50%] top-[45%] absolute w-11/12 max-w-[50rem] min-h-1/5 bg-gray-900/99 shadow-xl px-4 py-5 rounded-lg z-10"
+            class="fixed inset-0 bg-gray-700/40 z-5 opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none"
+          ></div>
+
+          <div
+            class="info-card hidden group-focus-within:block right-1/2 transform translate-x-[50%] translate-y-[-50%] top-[45%] absolute w-11/12 max-w-200 min-h-1/5 bg-gray-900 shadow-xl px-4 py-5 rounded-lg z-10"
           >
             <h3 class="font-bold text-lg mb-3">Info</h3>
             <p>
@@ -58,39 +62,33 @@
         <h3 class="font-bold">starts the conversation</h3>
       </div>
       <div
-        class="mx-auto my-auto flex flex-col gap-5 items-center font-extrabold text-5xl"
+        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-5 items-center font-extrabold text-5xl"
         id="timer-box"
       >
         <h3 class="text-2xl text-shadow-md">Timer</h3>
         <h1 class="font-bold text-7xl text-shadow-md" id="time-display">00:00</h1>
       </div>
       <div
-        class="absolute transform translate-x-[50%] right-[50%] bottom-5 text-white text-lg font-bold flex gap-2 w-full max-w-90 mx-auto"
+        class="text-gray-100 text-lg font-bold gap-2 w-full max-w-90 mx-auto mt-auto"
         id="button-container"
       >
         <div class="paused-button-container grid grid-cols-2 w-full gap-4 px-4 hidden">
-          <button
-            class="bg-gray-900 py-4 px-4 rounded-4xl shadow-xl active:bg-gray-800"
-            id="resume-button"
-          >
+          <button class="bg-black rounded-4xl p-3 shadow-md active:bg-gray-700" id="resume-button">
             Resume
           </button>
-          <button
-            class="bg-gray-900 py-4 px-4 rounded-4xl shadow-xl active:bg-gray-800"
-            id="vote-button"
-          >
+          <button class="bg-black rounded-full p-3 shadow-md active:bg-gray-700" id="vote-button">
             Vote
           </button>
         </div>
         <button
-          class="bg-gray-900 py-3 px-4 rounded-4xl shadow-xl active:bg-gray-800 w-60 max-w-full mx-auto"
+          class="bg-black text-white rounded-full p-3 shadow-md active:bg-gray-700 w-50 mx-auto block"
           id="pause-button"
         >
           Pause
         </button>
       </div>
     </section>
-    <div class="lava-box absolute w-full h-full top-0 transition-[top] duration-[1s]" id="lava-box">
+    <div class="lava-box absolute w-full h-full top-0 transition-[top] duration-1000" id="lava-box">
       <canvas id="canvas"></canvas>
     </div>
     <script src="scripts/timer.js"></script>

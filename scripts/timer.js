@@ -45,6 +45,8 @@ setTimeout(() => {
 
 function endRound() {
   timerBox.innerText = "Time's Up!!";
+  timerBox.classList.remove("5xl");
+  timerBox.classList.add("6xl");
   topButtonContainer.classList.add("hidden");
   buttonContainer.classList.add("hidden");
   setTimeout(() => {
