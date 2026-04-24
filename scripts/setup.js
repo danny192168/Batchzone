@@ -2,7 +2,7 @@
 import { customWordList, wordList } from "./wordlist.js";
 
 let gameData = {
-  players: ["1", "2", "3"],
+  players: [],
   categories: [],
   customCategories: [],
   finalCategory: null,
@@ -49,6 +49,42 @@ function showStartButton() {
 
 // PLAYER
 let playersContainer = document.getElementById("players-container");
+
+function getLocalGameData() {
+  let data = JSON.parse(sessionStorage.getItem("gameData"));
+  console.log(data ? "200" : "404");
+  return data || [];
+}
+
+gameData.players = getLocalGameData().players || [];
+
+//add cached players
+if (gameData.players.length > 0) {
+  let players = gameData.players;
+  console.log("players", players);
+  playersContainer.innerHTML = "";
+  players.forEach((item) => {
+    let element = document.createElement("div");
+    element.classList.add(
+      "player-item",
+      "flex",
+      "justify-between",
+      "w-full",
+      "rounded-xl",
+      "shadow-lg",
+      "overflow-hidden",
+      "border",
+      "border-gray-800",
+      "p-3",
+      "font-bold",
+      "bg-gray-300",
+    );
+    element.innerHTML = `
+    <div>${item}</div><div class="active:text-gray-500">
+    <i class="fa-solid fa-xmark text-lg"></i></div>`;
+    playersContainer.append(element);
+  });
+}
 
 const playerInput = document.getElementById("player-input");
 const playerSubmitBtn = document.getElementById("player-submit-btn");
