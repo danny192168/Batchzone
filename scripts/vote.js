@@ -47,6 +47,8 @@ nameDisplays.innerText = gameData.players.forEach((item, index) => {
   }
 });
 
+const voteIconContainer = document.getElementById("vote-icon-container");
+
 function submitVote() {
   wordDisplay.innerText = `Word: ${gameData.word}`;
   //   result1.classList.add("hidden");
@@ -60,7 +62,11 @@ function submitVote() {
   );
   const playerRatio = impostorsLeft.length / playersLeft.length;
   impostorLeftDisplay.innerText = `${impostorsLeft.length} Impostor left`;
-  votedNameSpan.innerText = gameData.players[votedPlayerIndex];
+  votedNameSpan.innerText = `${gameData.players[votedPlayerIndex]} is not the impostor`;
+  if (gameData.impostorIndices.includes(votedPlayerIndex)) {
+    votedNameSpan.innerText = `${gameData.players[votedPlayerIndex]} is an impostor`;
+    voteIconContainer.innerHTML = '<i class="fa-solid fa-check text-[#1a7a7a]"></i>';
+  }
   // impostor wins
   console.log(playerRatio);
   if (playerRatio >= 0.5) {
