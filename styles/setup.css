@@ -1,0 +1,16 @@
+#info-button:focus + .info-card {
+  display: block;
+  /* background: red; */
+}
+
+.info-card:focus {
+  display: block;
+}
+
+.settings-card {
+  display: none;
+}
+
+header:has(#toggle-box:checked) .settings-card {
+  display: block;
+}

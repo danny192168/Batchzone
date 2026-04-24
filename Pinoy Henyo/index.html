@@ -3,7 +3,134 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/output.css" />
+    <link rel="icon" href="../images/logo-icon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Pinoy Henyo: Select a word</title>
   </head>
-  <body></body>
+  <body class="bg-gray-900 text-white">
+    <header class="bg-white border-b border-white-200">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+        <img src="../images/logo.svg" alt="BATCHZONE" class="h-7 sm:h-9" />
+        <div class="flex items-center gap-3 sm:gap-5">
+          <div class="group">
+            <button
+              class="flex items-center text-gray-700 hover:text-[#1a7a7a] transition-colors text-sm sm:text-base"
+            >
+              <i class="fa-solid fa-circle-info text-xl text-shadow-sm"></i>
+            </button>
+
+            <div
+              class="fixed inset-0 bg-gray-700/40 z-5 opacity-0 group-focus-within:opacity-100 transition-opacity pointer-events-none"
+            ></div>
+
+            <div
+              class="info-card hidden group-focus-within:block right-1/2 transform translate-x-[50%] translate-y-[-50%] top-[45%] absolute w-11/12 max-w-200 min-h-1/5 bg-gray-900 shadow-xl px-4 py-5 rounded-lg z-10"
+            >
+              <h3 class="font-bold text-lg mb-3">Info</h3>
+              <p>
+                To shorten, you simply play the game the way that it would be blah blah blah. Ask
+                the guy beside you. Or just play along and understand it on the fly
+              </p>
+              <br />
+              <p>
+                But to clarify, in Guess the Impostor, everyone is given a card with a word that you
+                must take turn describing without saying the exact from the card. However, not
+                everyon receives a card with the word. The impostor receives only a hint of what the
+                word is. The goal of the game is know these impostors and vote them out after a
+                round of describing the word. Else, the impostor wins. If you're the impostor and
+                you confidently guessed the word, you can win by raising your hand and saying it. If
+                it's wrong however, you lose.
+              </p>
+            </div>
+          </div>
+          <label
+            class="flex items-center text-gray-700 hover:text-[#1a7a7a] transition-colors text-sm sm:text-base"
+            for="toggle-box"
+          >
+            <i class="fa-solid fa-gear text-xl text-shadow-sm"></i>
+            <!-- <span class="ml-1 hidden md:inline">Report</span> -->
+          </label>
+          <input class="hidden" type="checkbox" id="toggle-box" />
+          <div
+            class="settings-card right-0 top-0 transform fixed z-100 w-120 max-w-full min-h-dvh bg-gray-900/99 shadow-xl px-4 py-5 hidden"
+          >
+            <div class="flex items-center justify-center relative text-2xl active:text-gray-400">
+              <label class="absolute left-0" for="toggle-box"
+                ><i class="fa-solid fa-angle-left text-shadow-sm"></i
+              ></label>
+              <h3 class="font-bold text-white">Settings</h3>
+            </div>
+            <div class="flex flex-col mt-2 text-xl gap-2">
+              <a
+                href="mailto:support@yourapp.com?subject=Suggestion%20for%20Your%20Game&body=Hi,%20I%20have%20a%20suggestion%20for%20your%20app:%0A%0A%0A%3C%3C%20Please%20describe%20your%20suggestion%20here.%20%3E%3E"
+                ><button
+                  class="border-b border-gray-600 py-4 w-full flex items-center justify-start gap-2"
+                >
+                  <i class="fa-solid fa-lightbulb text-xl"></i>
+                  <span class="">Suggestions</span>
+                </button></a
+              >
+              <button
+                class="border-b border-gray-600 py-4 w-full flex items-center justify-start gap-2"
+              >
+                <i class="fa-solid fa-language"></i>
+                <span class="">Language</span>
+                <span class="text-sm text-gray-400">Coming soon</span>
+              </button>
+              <button
+                class="border-b border-gray-600 py-4 w-full flex items-center justify-start gap-2"
+                id="share-button"
+              >
+                <i class="fa-solid fa-share-nodes"></i>
+                <span class="">Share</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- <button
+          class="text-gray-600 px-4 sm:px-5 py-2 rounded-lg hover:bg-[#156565] transition-colors text-sm sm:text-base"
+        >
+          Login
+        </button> -->
+      </div>
+    </header>
+    <div class="max-w-5xl mx-auto flex justify-between p-3 mt-3 text-gray-200">
+      <a href="index.html"
+        ><button class="text-2xl" id="back-button">
+          <i class="fa-solid fa-angle-left text-shadow-sm"></i></button
+      ></a>
+    </div>
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 mb-5 pb-3 sm:mb-10">
+      <h1 class="text-3xl sm:text-5xl tracking-tight text-center font-bold">Pinoy Henyo</h1>
+      <div class="container flex flex-col items-center">
+        <div class="card-container mb-4">
+          <div class="bg-mist-600 p-2 aspect-3/4 w-60 mt-7 rounded-xl shadow-lg"></div>
+        </div>
+        <div class="button-container w-60">
+          <div class="flex justify-between">
+            <span>Time: 10:00</span><i class="fa-solid fa-pen"></i>
+          </div>
+          <!-- <div
+            class="p-2 w-full rounded-lg mb-2 font-bold flex justify-between items-center"
+          >
+            <div class="bg-sky-900 rounded-lg h-8 aspect-square grid place-items-center">
+              <i class="fa-solid fa-minus"></i>
+            </div>
+            <div class="text-2xl">00:00</div>
+            <div class="bg-sky-900 rounded-lg h-8 aspect-square grid place-items-center">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+          </div> -->
+          <button class="bg-sky-900 p-2 w-full rounded-lg mb-2 font-bold">Start</button>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
