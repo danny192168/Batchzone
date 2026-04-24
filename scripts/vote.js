@@ -21,7 +21,7 @@ const result2 = document.getElementById("result-2");
 const nameDisplays = document.querySelectorAll(".name-display");
 const impostorNameSpan = document.getElementById("impostor-name-span");
 const votedNameSpan = document.getElementById("voted-name-span");
-const hintDisplay = document.getElementById("word-display");
+const wordDisplay = document.getElementById("word-display");
 const textFinalDisplay = document.getElementById("text-final-display");
 const impostorLeftDisplay = document.getElementById("impostorsleft-display");
 // Function
@@ -48,6 +48,7 @@ nameDisplays.innerText = gameData.players.forEach((item, index) => {
 });
 
 function submitVote() {
+  wordDisplay.innerText = `Word: ${gameData.word}`;
   //   result1.classList.add("hidden");
   //   result2.classList.remove("hidden");
   votedPlayerIndices.push(votedPlayerIndex);
@@ -71,13 +72,14 @@ function submitVote() {
     console.log(textFinalDisplay);
   }
   // impostor loses
-  //Game proceeds
+
   if (playerRatio == 0) {
     console.log("win");
     result1.classList.add("hidden");
     result2.classList.remove("hidden");
     result2.classList.add("flex");
   }
+  //Game proceeds
   let impostors = "";
   //My dirty code 💪
   if (gameData.impostorCount > 1) {
