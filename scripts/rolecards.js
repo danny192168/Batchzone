@@ -105,16 +105,21 @@ let isLastCard = false;
 
 const nextCardBtn = document.getElementById("nextcard-button");
 
+let currentCardShown = false;
+
 function dispBtn(isShow = true) {
-  nextCardBtn.disable = isShow ? false : true;
   isShow
     ? nextCardBtn.classList.remove("translate-y-[10rem]")
     : nextCardBtn.classList.add("translate-y-[10rem]");
+  setTimeout(() => {
+    nextCardBtn.disabled = false;
+  }, 500);
 }
 
 //ROTATE
 
 function rotateCard() {
+  nextCardBtn.disabled = true;
   if (!isLastCard) {
     dispBtn(false);
     var currentCard = document.querySelector(".shown-card");

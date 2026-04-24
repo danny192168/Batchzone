@@ -79,7 +79,7 @@ function submitVote() {
     result2.classList.remove("hidden");
     result2.classList.add("flex");
   }
-  //Game proceeds
+  //Display impostors
   let impostors = "";
   //My dirty code 💪
   if (gameData.impostorCount > 1) {
