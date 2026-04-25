@@ -11,6 +11,7 @@
     <meta property="og:type" content="website" />
     <title>Welcome to Batch Zone</title>
     <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/panel.css" />
     <link href="styles/output.css" rel="stylesheet" />
     <link rel="icon" href="images/logo-icon.svg" />
     <link
@@ -71,7 +72,7 @@
     <section
       class="game-card-section max-w-5xl mx-auto px-4 sm:px-6 py-3 sm:py-4 gap-4 sm:gap-8 mb-6 sm:mb-12"
     >
-      <div class="bg-[#19253a] flex flex-col border border-gray-800 p-6 rounded-lg mb-6 sm:mb-12">
+      <div class="flex flex-col border border-gray-800 p-6 rounded-lg mb-6 sm:mb-12 bg-polka">
         <div>
           <h2 class="font-bold">Create a word list</h2>
           <p class="mb-4">
@@ -80,100 +81,30 @@
           </p>
         </div>
 
-        <form
-          action="/your-action"
-          method="post"
-          class="grid grid-cols-2 md:grid-cols-2 gap-0 w-full border-collapse rounded-lg overflow-hidden text-white shadow-lg mb-6"
+        <div
+          class="grid grid-cols-2 md:grid-cols-2 gap-0 w-full rounded-lg overflow-hidden text-white shadow-lg mb-6 text-sm"
         >
           <!-- Header row -->
-          <div
-            class="bg-[#26344c] px-4 py-3 text-left text-sm font-semibold border-b border-gray-700"
-          >
+          <div class="bg-[#26344c] px-4 py-3 text-left font-semibold border-b border-gray-700">
             Word
           </div>
-          <div
-            class="bg-[#26344c] px-4 py-3 text-left text-sm font-semibold border-b border-gray-700"
-          >
+          <div class="bg-[#26344c] px-4 py-3 text-left font-semibold border-b border-gray-700">
             Hint
           </div>
 
           <!-- Data rows -->
-          <div
-            class="bg-[#1d2d46] hover:bg-[#1d2d46]/80 transition-colors px-4 py-3 text-sm border-t border-gray-700"
-          >
-            <input
-              type="text"
-              name="word1"
-              class="w-full text-sm outline-none bg-transparent text-white"
-            />
-          </div>
-          <div
-            class="bg-[#1d2d46] hover:bg-[#1d2d46]/80 transition-colors px-4 py-3 text-sm border-t border-gray-700"
-          >
-            <input
-              type="text"
-              name="hint1"
-              class="w-full text-sm outline-none bg-transparent text-white"
-            />
-          </div>
 
           <div
-            class="bg-[#1d2d46] hover:bg-[#1d2d46]/80 transition-colors px-4 py-3 text-sm border-t border-gray-700"
-          >
-            <input
-              type="text"
-              name="word3"
-              class="w-full text-sm outline-none bg-transparent text-white"
-            />
-          </div>
+            class="notepad bg-[#1d2d46] hover:bg-[#1d2d46]/80 transition-colors border-t border-gray-700"
+            contenteditable="true"
+            spellcheck="false"
+          ></div>
           <div
-            class="bg-[#1d2d46] hover:bg-[#1d2d46]/80 transition-colors px-4 py-3 text-sm border-t border-gray-700"
-          >
-            <input
-              type="text"
-              name="hint3"
-              class="w-full text-sm outline-none bg-transparent text-white"
-            />
-          </div>
-        </form>
-
-        <form
-          action="/your-action"
-          method="post"
-          class="grid grid-cols-2 md:grid-cols-2 gap-0 w-full border-collapse rounded-lg overflow-hidden text-white shadow-lg mb-6"
-        >
-          <!-- Header row -->
-          <div
-            class="bg-[#26344c] px-4 py-3 text-left text-sm font-semibold border-b border-gray-700"
-          >
-            Word
-          </div>
-          <div
-            class="bg-[#26344c] px-4 py-3 text-left text-sm font-semibold border-b border-gray-700"
-          >
-            Hint
-          </div>
-
-          <!-- Data rows -->
-          <div
-            class="bg-[#1d2d46] hover:bg-[#1d2d46]/80 transition-colors px-4 py-3 text-sm border-t border-gray-700"
-          >
-            <input
-              type="text"
-              name="word1"
-              class="w-full text-sm outline-none bg-transparent text-white"
-            />
-          </div>
-          <div
-            class="bg-[#1d2d46] hover:bg-[#1d2d46]/80 transition-colors px-4 py-3 text-sm border-t border-gray-700"
-          >
-            <textarea
-              type="text"
-              name="hint1"
-              class="w-full text-sm outline-none bg-transparent text-white"
-            ></textarea>
-          </div>
-        </form>
+            class="notepad bg-[#1d2d46] hover:bg-[#1d2d46]/80 transition-colors border-t border-l border-gray-700"
+            contenteditable="true"
+            spellcheck="false"
+          ></div>
+        </div>
 
         <div class="flex">
           <button class="bg-[#5863F8] font-semibold p-2 px-4 rounded-lg min-w-30 ml-auto">
@@ -181,7 +112,7 @@
           </button>
         </div>
       </div>
-      <div class="bg-[#19253a] flex flex-col border border-gray-800 p-6 rounded-lg">
+      <div class="bg-polka flex flex-col border border-gray-800 p-6 rounded-lg">
         <div class="flex items-center flex-wrap gap-x-4 justify-between mb-4 sm:mb-5">
           <div>
             <h2 class="font-bold">Custom word lists</h2>

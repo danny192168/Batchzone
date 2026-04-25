@@ -146,7 +146,7 @@ let cards = document.querySelectorAll(".card");
 
 cards.forEach((card) => {
   card.addEventListener("mousedown", () => {
-    startButtonTimeout = setTimeout(dispBtn, 400, true);
+    startButtonTimeout = setTimeout(dispBtn(true), 400, true);
   });
   card.addEventListener("mouseup", () => {
     clearTimeout(startButtonTimeout);
@@ -154,6 +154,7 @@ cards.forEach((card) => {
 
   // mobile
   card.addEventListener("touchstart", () => {
+    console.log("TOUCH");
     startButtonTimeout = setTimeout(() => dispBtn(true), 400);
   });
 
@@ -164,4 +165,11 @@ cards.forEach((card) => {
   card.addEventListener("touchcancel", () => {
     clearTimeout(startButtonTimeout);
   });
+});
+
+//PREVENT ANNOYING POPUP WHEN HOLDING ON SCREEN
+//MAY FULLY PREVENT FUNCTIONALITY ON EMULATED TOUCH EVENTS FROM BROWSERS LIKE FIREFOX. IT WORKS ON BETTER TOUCH EMULATIONS ON BRAVE, CHROME SO I"LL RISK IT.
+document.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+  console.log(e);
 });

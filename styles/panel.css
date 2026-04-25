@@ -1,0 +1,23 @@
+.notepad {
+  outline: none;
+}
+
+.notepad:not(:has(div)) {
+  padding: 0.5rem 0.75rem;
+}
+
+.notepad > div {
+  padding: 0.5rem 0.75rem;
+  color: white;
+}
+
+.notepad > div:not(:first-child) {
+  border-top: solid 1px #364153;
+}
+
+/* PATTERN */
+.bg-polka {
+  background-color: #19253a;
+  background-image: radial-gradient(#101828 1px, #19253a 1px);
+  background-size: 1rem 1rem;
+}

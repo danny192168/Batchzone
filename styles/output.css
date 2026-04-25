@@ -570,6 +570,9 @@
   .h-30 {
     height: calc(var(--spacing) * 30);
   }
+  .h-\[2rem\] {
+    height: 2rem;
+  }
   .h-\[100dvh\] {
     height: 100dvh;
   }
@@ -593,6 +596,12 @@
   }
   .min-h-50 {
     min-height: calc(var(--spacing) * 50);
+  }
+  .min-h-\[1\.6rem\] {
+    min-height: 1.6rem;
+  }
+  .min-h-\[2rem\] {
+    min-height: 2rem;
   }
   .min-h-\[14rem\] {
     min-height: 14rem;
@@ -1083,6 +1092,14 @@
   .border-b-2 {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 2px;
+  }
+  .border-l {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 1px;
+  }
+  .border-l-2 {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 2px;
   }
   .border-none {
     --tw-border-style: none;
