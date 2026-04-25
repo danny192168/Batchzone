@@ -59,7 +59,7 @@ function createCardElements() {
     pos == 0 ? element.classList.add("shown-card") : undefined;
     let isImpostor = gameData.impostorIndices.includes(pos);
     element.innerHTML = `
-           <div class="content">
+           <div class="content select-none">
               <div class="front bg-${cardColors[pos] || cardColors - cardColors.length + pos}-500">
                 <h2 class="text-4xl font-bold text-center text-gray-900">${player}</h2>
                 <div class="flex justify-center text-gray-900 flex-col items-center gap-4 mt-auto">

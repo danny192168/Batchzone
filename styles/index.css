@@ -66,13 +66,14 @@
 
   header:has(#menu-toggle:checked) .navigation-container button {
     font-size: 1.2rem;
+    color: white;
   }
   .navigation-container {
     position: absolute;
     transition: all 1s;
     /* right: -0vw; */
     bottom: -100vh;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(12, 16, 26, 0.95);
     /* top: 1rem; */
     display: none;
     flex-direction: column;

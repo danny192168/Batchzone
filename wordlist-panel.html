@@ -9,34 +9,34 @@
     <meta property="og:image" content="https://danny192168.github.io/Batchzone/images/draft2.png" />
     <meta property="og:url" content="https://danny192168.github.io/Batchzone/" />
     <meta property="og:type" content="website" />
-
     <title>Welcome to Batch Zone</title>
     <link rel="stylesheet" href="styles/index.css" />
     <link href="styles/output.css" rel="stylesheet" />
     <link rel="icon" href="images/logo-icon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body class="bg-gray-900 text-white">
-    <header class="bg-white border-b border-gray-200">
+    <header class="bg-white border-b border-gray-700">
       <div
         class="max-w-5xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between relative"
       >
-        <img src="images/logo.svg" alt="BATCHZONE" class="h-7 sm:h-9" />
+        <a href="index.html"><img src="images/logo.svg" alt="BATCHZONE" class="h-7 sm:h-9" /></a>
         <div class="navigation-container flex items-center gap-3 sm:gap-5">
-          <button class="text-gray-700 hover:text-[#1a7a7a] transition-colors text-sm sm:text-base">
-            About
-          </button>
+          <button class="hover:text-[#1a7a7a] transition-colors text-sm sm:text-base">About</button>
           <a
             href="mailto:dwight00100@gmail.com?subject=Suggestion%20for%20Your%20Game&body=Hi,%20I%20have%20a%20suggestion%20for%20your%20app:%0A%0A%0A%3C%3C%20Please%20describe%20your%20suggestion%20here.%20%3E%3E"
-            ><button
-              class="text-gray-700 hover:text-[#1a7a7a] transition-colors text-sm sm:text-base"
-            >
+            ><button class="hover:text-[#1a7a7a] transition-colors text-sm sm:text-base">
               Suggestions
             </button>
           </a>
           <a href="notice.html"
-            ><button
-              class="text-gray-700 hover:text-[#1a7a7a] transition-colors text-sm sm:text-base"
-            >
+            ><button class="hover:text-[#1a7a7a] transition-colors text-sm sm:text-base">
               Download
             </button>
           </a>
@@ -67,13 +67,174 @@
       </div>
     </section>
 
-    <i class="fa-solid fa-language text-2xl"></i>
-    <i class="fa-regular fa-language"></i>
     <!-- Card Container -->
     <section
-      class="game-card-section max-w-5xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex gap-4 sm:gap-8 items-center justify-center mb-6 sm:mb-12"
+      class="game-card-section max-w-5xl mx-auto px-4 sm:px-6 py-3 sm:py-4 gap-4 sm:gap-8 mb-6 sm:mb-12"
     >
-      <div></div>
+      <div class="bg-[#19253a] flex flex-col border border-gray-800 p-6 rounded-lg mb-6 sm:mb-12">
+        <div>
+          <h2 class="font-bold">Create a word list</h2>
+          <p class="mb-4">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente beatae vel facere
+            ullam provident fugiat!
+          </p>
+        </div>
+
+        <form
+          action="/your-action"
+          method="post"
+          class="grid grid-cols-2 md:grid-cols-2 gap-0 w-full border-collapse rounded-lg overflow-hidden text-white shadow-lg mb-6"
+        >
+          <!-- Header row -->
+          <div
+            class="bg-[#26344c] px-4 py-3 text-left text-sm font-semibold border-b border-gray-700"
+          >
+            Word
+          </div>
+          <div
+            class="bg-[#26344c] px-4 py-3 text-left text-sm font-semibold border-b border-gray-700"
+          >
+            Hint
+          </div>
+
+          <!-- Data rows -->
+          <div
+            class="bg-[#1d2d46] hover:bg-[#1d2d46]/80 transition-colors px-4 py-3 text-sm border-t border-gray-700"
+          >
+            <input
+              type="text"
+              name="word1"
+              class="w-full text-sm outline-none bg-transparent text-white"
+            />
+          </div>
+          <div
+            class="bg-[#1d2d46] hover:bg-[#1d2d46]/80 transition-colors px-4 py-3 text-sm border-t border-gray-700"
+          >
+            <input
+              type="text"
+              name="hint1"
+              class="w-full text-sm outline-none bg-transparent text-white"
+            />
+          </div>
+
+          <div
+            class="bg-[#1d2d46] hover:bg-[#1d2d46]/80 transition-colors px-4 py-3 text-sm border-t border-gray-700"
+          >
+            <input
+              type="text"
+              name="word3"
+              class="w-full text-sm outline-none bg-transparent text-white"
+            />
+          </div>
+          <div
+            class="bg-[#1d2d46] hover:bg-[#1d2d46]/80 transition-colors px-4 py-3 text-sm border-t border-gray-700"
+          >
+            <input
+              type="text"
+              name="hint3"
+              class="w-full text-sm outline-none bg-transparent text-white"
+            />
+          </div>
+        </form>
+
+        <form
+          action="/your-action"
+          method="post"
+          class="grid grid-cols-2 md:grid-cols-2 gap-0 w-full border-collapse rounded-lg overflow-hidden text-white shadow-lg mb-6"
+        >
+          <!-- Header row -->
+          <div
+            class="bg-[#26344c] px-4 py-3 text-left text-sm font-semibold border-b border-gray-700"
+          >
+            Word
+          </div>
+          <div
+            class="bg-[#26344c] px-4 py-3 text-left text-sm font-semibold border-b border-gray-700"
+          >
+            Hint
+          </div>
+
+          <!-- Data rows -->
+          <div
+            class="bg-[#1d2d46] hover:bg-[#1d2d46]/80 transition-colors px-4 py-3 text-sm border-t border-gray-700"
+          >
+            <input
+              type="text"
+              name="word1"
+              class="w-full text-sm outline-none bg-transparent text-white"
+            />
+          </div>
+          <div
+            class="bg-[#1d2d46] hover:bg-[#1d2d46]/80 transition-colors px-4 py-3 text-sm border-t border-gray-700"
+          >
+            <textarea
+              type="text"
+              name="hint1"
+              class="w-full text-sm outline-none bg-transparent text-white"
+            ></textarea>
+          </div>
+        </form>
+
+        <div class="flex">
+          <button class="bg-[#5863F8] font-semibold p-2 px-4 rounded-lg min-w-30 ml-auto">
+            submit for review
+          </button>
+        </div>
+      </div>
+      <div class="bg-[#19253a] flex flex-col border border-gray-800 p-6 rounded-lg">
+        <div class="flex items-center flex-wrap gap-x-4 justify-between mb-4 sm:mb-5">
+          <div>
+            <h2 class="font-bold">Custom word lists</h2>
+            <p class="mb-4">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente beatae vel facere
+              ullam provident fugiat!
+            </p>
+          </div>
+          <button class="bg-[#5863F8] font-semibold p-2 rounded-lg min-w-30">Create one</button>
+        </div>
+        <table
+          class="table-auto md:table-fixed w-full border-collapse rounded-lg overflow-hidden text-white shadow-lg"
+        >
+          <thead class="bg-[#26344c]">
+            <tr>
+              <th class="px-4 py-3 text-left text-sm font-semibold border-b border-gray-700">
+                Category
+              </th>
+              <th class="px-4 py-3 text-left text-sm font-semibold border-b border-gray-700">
+                Creator
+              </th>
+              <th class="px-4 py-3 text-left text-sm font-semibold border-b border-gray-700">
+                Date
+              </th>
+              <th class="px-4 py-3 text-left text-sm font-semibold border-b border-gray-700">
+                Rating
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-[#1d2d46]">
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="px-4 py-3 text-sm border-t border-gray-700">
+                The Sliding Mr. Bones (Next Stop, Pottersville)
+              </td>
+              <td class="px-4 py-3 text-sm border-t border-gray-700">Malcolm Lockyer</td>
+              <td class="px-4 py-3 text-sm border-t border-gray-700">1961</td>
+              <td class="px-4 py-3 text-sm border-t border-gray-700">none</td>
+            </tr>
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="px-4 py-3 text-sm border-t border-gray-700">Witchy Woman</td>
+              <td class="px-4 py-3 text-sm border-t border-gray-700">The Eagles</td>
+              <td class="px-4 py-3 text-sm border-t border-gray-700">1972</td>
+              <td class="px-4 py-3 text-sm border-t border-gray-700">none</td>
+            </tr>
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="px-4 py-3 text-sm border-t border-gray-700">Shining Star</td>
+              <td class="px-4 py-3 text-sm border-t border-gray-700">Earth, Wind, and Fire</td>
+              <td class="px-4 py-3 text-sm border-t border-gray-700">1975</td>
+              <td class="px-4 py-3 text-sm border-t border-gray-700">none</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
     <!-- FEATURES -->
     <section class="w-full bg-[#131A24] py-10">
@@ -122,51 +283,6 @@
         </div>
       </div>
     </section>
-    <!-- Notice modal -->
-    <!-- <dialog
-      id="notice-modal"
-      class="top-1/2 left-1/2 transform translate-x-[-50%] translate-y-[-50%] inset-0 z-10 bg-gray-900 p-5 outline-none rounded-lg min-h-50 max-w-2xl w-5/6 gap-3 shadow-lg text-white backdrop:bg-black/80"
-    >
-      <h2 class="font-bold text-xl mb-2">Notice, this is an early access Product</h2>
-      <article class="text-justify text-gray-200">
-        <p>
-          Dear early users, thank you for playing. Please report any bugs you find, and excuse any
-          unfinished parts or rough edges.
-        </p>
-        <br />
-        <p>
-          The <strong class="text-[#176d6d]">wordlist</strong> used in this current version are
-          about a thousands of words <strong class="text-[#b6174b]">AI-generated</strong> with Meta
-          AI so it's not very contextualized.
-          <strong>You can help in making these wordlists at any categories you want.</strong> For
-          any suggestions and bug reports, send it on my messenger account
-          <a href="https://web.facebook.com/dwight.wal" class="outline-none font-bold">here</a>.
-        </p>
-        <br />
-        <p>
-          However, this product is <strong>completely free</strong> ✨, and still with many rooms
-          for improvement. 🤘
-        </p>
-        <br />
-      </article>
-      <div class="w-full flex">
-        <button
-          class="bg-gray-950 p-2 text-white mt-auto mx--auto rounded-lg outline-none font-bold shadow-lg mx-auto w-full max-w-80"
-          id="close-modal-button"
-        >
-          Proceed
-        </button>
-      </div>
-    </dialog>
-    <script>
-      const noticeModal = document.getElementById("notice-modal");
-      const closeModalBtn = document.getElementById("close-modal-button");
-      noticeModal.showModal();
-      closeModalBtn.addEventListener("click", () => {
-        noticeModal.close();
-      });
-    </script> -->
-
     <!-- FOOTER -->
     <footer class="bg-[#0A0F19] text-gray-300 mt-auto">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12">

@@ -316,22 +316,65 @@ timerAddBtn.addEventListener("click", () => {
 //SHARE
 const shareBtn = document.getElementById("share-button");
 
+if (!shareBtn) {
+  console.warn("Share button not found");
+}
+
 shareBtn.addEventListener("click", async () => {
+  // 1. Web Share API (Chrome, Edge, some Android, Safari TP, etc.)
   if (navigator.share) {
     try {
       await navigator.share({
         title: document.title,
-        url: window.location.href,
+        url: window.location.origin + "/index.html",
       });
+      return;
     } catch (err) {
       console.log("Share failed:", err.message);
     }
-  } else {
-    // Fallback: copy URL to clipboard
-    navigator.clipboard.writeText(window.location.href);
-    alert("Link copied to clipboard!");
+  }
+
+  // 2. Clipboard API fallback (modern browsers)
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    try {
+      await navigator.clipboard.writeText(window.location.origin + "/index.html");
+      showNotification("Link copied to clipboard!");
+      return;
+    } catch (err) {
+      console.log("Clipboard write failed:", err.message);
+    }
+  }
+
+  // 3. Old‑school fallback: input + execCommand (IE / very old browsers)
+  try {
+    const input = document.createElement("input");
+    input.value = window.location.origin + "/index.html";
+    input.style.cssText = "position:fixed; top:0; left:0; opacity:0; pointer-events:none;";
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("copy");
+    document.body.removeChild(input);
+    showNotification("Link copied to clipboard!");
+  } catch (err) {
+    console.log("Fallback copy failed:", err.message);
+    showNotification("Please copy the link manually.");
   }
 });
+
+// Helper to show a nicer message than alert
+function showNotification(message) {
+  const toast = document.createElement("div");
+  toast.textContent = message;
+  toast.style.cssText =
+    "position:fixed; bottom:2rem; left:50%; transform:translateX(-50%);" +
+    "background:#333; color:white; padding:0.75rem 1rem; border-radius:0.5rem;" +
+    "font-size:0.875rem; z-index:9999; pointer-events:none;";
+
+  document.body.appendChild(toast);
+  setTimeout(() => {
+    document.body.removeChild(toast);
+  }, 3000);
+}
 
 //SELECT CUSTOM MODAL
 const modal = document.getElementById("modal");

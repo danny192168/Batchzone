@@ -199,9 +199,12 @@
     <script>
       const noticeModal = document.getElementById("notice-modal");
       const closeModalBtn = document.getElementById("close-modal-button");
-      noticeModal.showModal();
+      if (!sessionStorage.getItem("noticeViewed")) {
+        noticeModal.showModal();
+      }
       closeModalBtn.addEventListener("click", () => {
         noticeModal.close();
+        sessionStorage.setItem("noticeViewed", true);
       });
     </script>
 
