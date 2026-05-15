@@ -8,7 +8,7 @@ function getLocalGameData() {
 
 let gameData = getLocalGameData();
 
-let cardColors = ["red", "orange", "yellow", "green", "blue", "indigo", "purple", "pink"];
+let cardColors = ["rose", "orange", "amber", "teal", "cyan", "fuchsia", "purple", "pink"];
 
 // DOM
 const cardContainer = document.getElementById("card-container");
@@ -58,9 +58,14 @@ function createCardElements() {
     element.classList.add("card");
     pos == 0 ? element.classList.add("shown-card") : undefined;
     let isImpostor = gameData.impostorIndices.includes(pos);
+    let posIndex = pos;
+    if (pos >= cardColors.length) {
+      posIndex = random(0, cardColors.length - 1);
+    }
+    console.log(cardColors.length);
     element.innerHTML = `
            <div class="content select-none">
-              <div class="front bg-${cardColors[pos] || cardColors - cardColors.length + pos}-500">
+              <div class="front bg-${cardColors[posIndex]}-400">
                 <h2 class="text-4xl font-bold text-center text-gray-900">${player}</h2>
                 <div class="flex justify-center text-gray-900 flex-col items-center gap-4 mt-auto">
                   <i class="fa-regular fa-hand-pointer text-4xl"></i>

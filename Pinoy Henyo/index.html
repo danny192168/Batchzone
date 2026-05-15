@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/output.css" />
     <link rel="icon" href="../images/logo-icon.svg" />
+    <link rel="stylesheet" href="../styles/pattern.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -14,7 +15,7 @@
     />
     <title>Pinoy Henyo: Select a word</title>
   </head>
-  <body class="bg-gray-900 text-white">
+  <body class="bg-gray-900 bg-polka text-white">
     <header class="bg-white border-b border-white-200">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
         <img src="../images/logo.svg" alt="BATCHZONE" class="h-7 sm:h-9" />
@@ -108,27 +109,64 @@
       ></a>
     </div>
     <section class="max-w-5xl mx-auto px-4 sm:px-6 mb-5 pb-3 sm:mb-10">
-      <h1 class="text-3xl sm:text-5xl tracking-tight text-center font-bold">Pinoy Henyo</h1>
-      <div class="container flex flex-col items-center">
-        <div class="card-container mb-4">
-          <div class="bg-mist-600 p-2 aspect-3/4 w-60 mt-7 rounded-xl shadow-lg"></div>
-        </div>
-        <div class="button-container w-60">
-          <div class="flex justify-between">
-            <span>Time: 10:00</span><i class="fa-solid fa-pen"></i>
-          </div>
-          <!-- <div
-            class="p-2 w-full rounded-lg mb-2 font-bold flex justify-between items-center"
+      <h1 class="text-3xl sm:text-5xl tracking-tight text-white text-center font-bold">
+        Pinoy Henyo
+      </h1>
+      <div class="max-w-3xl">
+        <!-- <p class="text-lg sm:text-xl text-gray-700 sm:mb-8">
+          Figure who is pretending among you before they win by guessing the word or avoiding votes.
+        </p> -->
+      </div>
+    </section>
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 mb-5 pb-3 sm:mb-10">
+      <div class="text-gray-800" id="categories-container">
+        <h2 class="text-xl font-bold mb-2 text-gray-200">Categories</h2>
+        <p class="mb-3 text-gray-300">Select categories below or type your own</p>
+        <div id="category-items-container">
+          <div
+            data-category="everydayObjects"
+            class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 mb-3 font-bold bg-gray-300"
           >
-            <div class="bg-sky-900 rounded-lg h-8 aspect-square grid place-items-center">
-              <i class="fa-solid fa-minus"></i>
-            </div>
-            <div class="text-2xl">00:00</div>
-            <div class="bg-sky-900 rounded-lg h-8 aspect-square grid place-items-center">
-              <i class="fa-solid fa-plus"></i>
-            </div>
-          </div> -->
-          <button class="bg-sky-900 p-2 w-full rounded-lg mb-2 font-bold">Start</button>
+            <div>Tao</div>
+            <div class="hidden"><i class="fa-solid fa-check text-lg"></i></div>
+          </div>
+          <div
+            data-category="foodsAndDrinks"
+            class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 mb-3 font-bold bg-gray-300"
+          >
+            <div>Hayop</div>
+            <div class="hidden"><i class="fa-solid fa-check text-lg"></i></div>
+          </div>
+          <div
+            data-category="animalsAndPlants"
+            class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 mb-3 font-bold bg-gray-300"
+          >
+            <div>Bagay</div>
+            <div class="hidden"><i class="fa-solid fa-check text-lg"></i></div>
+          </div>
+          <div
+            data-category="schoolAndCollege"
+            class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 mb-3 font-bold bg-gray-300"
+          >
+            <div>Lugar</div>
+            <div class="hidden"><i class="fa-solid fa-check text-lg"></i></div>
+          </div>
+          <div
+            data-category="schoolAndCollege"
+            class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 mb-3 font-bold bg-gray-300"
+          >
+            <div>Basta Shadi</div>
+            <div class="hidden"><i class="fa-solid fa-check text-lg"></i></div>
+          </div>
+        </div>
+        <div
+          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 mb-3 font-bold bg-gray-300 text-gray-600"
+          id="select-custom-card"
+        >
+          <div>Type a word</div>
+          <div>
+            <i class="fa-solid fa-pencil text-lg"></i>
+          </div>
         </div>
       </div>
     </section>
