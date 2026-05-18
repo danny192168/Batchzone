@@ -121,7 +121,9 @@ finishButton.onclick = () => {
   //   window.location.href = "vote.html";
   lavaBox.classList.add("top-full");
   document.getElementById("content-overlay-word").innerText = gameData.word;
-  document.getElementById("content-overlay-time").innerText = msToTime(currentTime);
+  document.getElementById("content-overlay-time").innerText = msToTime(
+    gameData.time * 60 * 1000 - currentTime,
+  );
   contentOverlay.classList.remove("top-full");
   contentOverlay.classList.add("top-0");
 };
