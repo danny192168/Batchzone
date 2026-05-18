@@ -34,7 +34,7 @@ categoryItems.forEach((item) => {
   item.onclick = () => {
     let itemCategory = item.getAttribute("data-category");
     console.log(itemCategory);
-
+    wordInput.classList.add("hidden");
     if (itemCategory == "random") {
       let randomCategoryIndex = random(0, Object.keys(wordList).length - 1);
       let randomCategory = Object.keys(wordList)[randomCategoryIndex];
