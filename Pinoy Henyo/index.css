@@ -1,0 +1,72 @@
+body {
+}
+main {
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+.game-title {
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+#content-1 {
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  right: 0;
+}
+
+#content-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  right: -100vw;
+  bottom: 50%;
+  transform: translate(50%);
+  /* height: 40rem; */
+  /* border: solid 2px #000; */
+  transition: all 0.4s ease-in-out;
+  gap: 4rem;
+  /* background: gray; */
+  height: 60dvh;
+  top: 0;
+}
+
+#content-1.content-closed {
+  transition: all 0.2s ease-in-out;
+  right: 100vw;
+}
+
+#content-1.content-closed + #content-2 {
+  transition: all 0.5s backwards;
+  right: 50%;
+}
+
+/* absolute bottom-2 max-w-10/11 transform translate-1/2 */
+
+#ready-button {
+  position: absolute;
+  bottom: 2rem;
+  /* display: none; */
+  transform: translate(50%);
+  right: -100vw;
+  transition: right 0.5s ease-in-out;
+}
+
+#content-1.content-closed + #content-2 #ready-button {
+  right: 50%;
+  /* display: block; */
+  transition: all 0.2s backwards;
+}
+
+.category-item:active {
+  background-color: #1a7b7b;
+  color: white;
+}
+
+.category-item:active span {
+  color: white;
+}

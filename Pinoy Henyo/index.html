@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/output.css" />
-    <link rel="icon" href="../images/logo-icon.svg" />
+    <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="../styles/pattern.css" />
+    <link rel="icon" href="../images/logo-icon.svg" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -36,18 +37,21 @@
             >
               <h3 class="font-bold text-lg mb-3">Info</h3>
               <p>
-                To make it simple you can just play along and grasp it on the fly and ask the group
-                for the basic instructions.
+                For the rest of the players, they are revealed the word while the guesser tries to
+                guess the word by asking others for possible hints (e.g: "Is it an animal?"). He is
+                only responded by not-very-revealing feedbacks like
+                <strong>"yes", "no" or "close".</strong> The guesser wins if he can guess the word
+                within the time limit. Otherwise, he loses.
               </p>
               <br />
               <p>
-                But to clarify, in Guess the Impostor, everyone is given a card with a word that you
-                must take turn describing without saying the exact from the card. However, not
-                everyon receives a card with the word. The impostor receives only a hint of what the
-                word is. The goal of the game is know these impostors and vote them out after a
-                round of describing the word. Else, the impostor wins. If you're the impostor and
-                you confidently guessed the word, you can win by raising your hand and saying it. If
-                it's wrong however, you lose.
+                For further instructions; please,
+                <strong class="text-rose-300">
+                  you don't have to hang the phone on someone's forhead.
+                </strong>
+                It's really unnecessary so you can just hold the phone if your not the guesser.
+                Other than that, this game is <strong>not language-limited.</strong> Lastly, just
+                enjoy the game.
               </p>
             </div>
           </div>
@@ -102,68 +106,120 @@
         </button> -->
       </div>
     </header>
-    <div class="max-w-5xl mx-auto flex justify-between p-3 mt-3 text-gray-200">
-      <a href="index.html"
+    <div class="max-w-5xl mx-auto flex justify-between p-3 mt-3 mb-5 text-gray-200 relative">
+      <a href="#"
         ><button class="text-2xl" id="back-button">
           <i class="fa-solid fa-angle-left text-shadow-sm"></i></button
       ></a>
-    </div>
-    <section class="max-w-5xl mx-auto px-4 sm:px-6 mb-5 pb-3 sm:mb-10">
-      <h1 class="text-3xl sm:text-5xl tracking-tight text-white text-center font-bold">
+      <h1
+        class="game-title text-3xl sm:text-4xl tracking-tight text-gray-200 text-center font-bold"
+      >
         Pinoy Henyo
       </h1>
-      <div class="max-w-3xl">
-        <!-- <p class="text-lg sm:text-xl text-gray-700 sm:mb-8">
-          Figure who is pretending among you before they win by guessing the word or avoiding votes.
-        </p> -->
-      </div>
-    </section>
-    <section class="max-w-5xl mx-auto px-4 sm:px-6 mb-5 pb-3 sm:mb-10">
-      <div class="text-gray-800" id="categories-container">
-        <h2 class="text-xl font-bold mb-2 text-gray-200">Categories</h2>
-        <p class="mb-3 text-gray-300">Select categories below or type your own</p>
-        <div id="category-items-container">
-          <div
-            data-category="everydayObjects"
-            class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 mb-3 font-bold bg-gray-300"
-          >
-            <div>Tao<span class="text-gray-600 text-xs ml-1">(Person)</span></div>
+    </div>
+    <main class="relative">
+      <!-- CONTENT 1 -->
+      <section class="max-w-5xl mx-auto px-4 sm:px-6 mb-5 pb-3 sm:mb-10" id="content-1">
+        <div class="text-gray-800" id="categories-container">
+          <h2 class="text-xl font-bold mb-2 text-gray-200">Categories</h2>
+          <p class="mb-3 text-gray-300">Select categories below or type your own</p>
+          <div id="category-items-container">
+            <div
+              data-category="tao"
+              class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 mb-3 font-bold bg-gray-300 hover:bg-gray-200"
+            >
+              <div>Tao<span class="text-gray-600 text-xs ml-1">(Person)</span></div>
+            </div>
+            <div
+              data-category="hayop"
+              class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 mb-3 font-bold bg-gray-300 hover:bg-gray-200"
+            >
+              <div>Hayop<span class="text-gray-600 text-xs ml-1">(Animal)</span></div>
+            </div>
+            <div
+              data-category="bagay"
+              class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 mb-3 font-bold bg-gray-300 hover:bg-gray-200"
+            >
+              <div>Bagay<span class="text-gray-600 text-xs ml-1">(Object)</span></div>
+            </div>
+            <div
+              data-category="lugar"
+              class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 mb-3 font-bold bg-gray-300 hover:bg-gray-200"
+            >
+              <div>Lugar<span class="text-gray-600 text-xs ml-1">(Place)</span></div>
+            </div>
+            <div
+              data-category="random"
+              class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 mb-3 font-bold bg-gray-300 hover:bg-gray-200"
+            >
+              <div>Basta Shadi<span class="text-gray-600 text-xs ml-1">(Random)</span></div>
+            </div>
           </div>
           <div
-            data-category="foodsAndDrinks"
-            class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 mb-3 font-bold bg-gray-300"
+            class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 mb-3 font-bold bg-gray-300 hover:bg-gray-200 text-gray-600"
+            id="type-custom-word-container"
           >
-            <div>Hayop<span class="text-gray-600 text-xs ml-1">(Animal)</span></div>
-          </div>
-          <div
-            data-category="animalsAndPlants"
-            class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 mb-3 font-bold bg-gray-300"
-          >
-            <div>Bagay<span class="text-gray-600 text-xs ml-1">(Object)</span></div>
-          </div>
-          <div
-            data-category="schoolAndCollege"
-            class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 mb-3 font-bold bg-gray-300"
-          >
-            <div>Lugar<span class="text-gray-600 text-xs ml-1">(Place)</span></div>
-          </div>
-          <div
-            data-category="schoolAndCollege"
-            class="category-item flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 mb-3 font-bold bg-gray-300"
-          >
-            <div>Basta Shadi<span class="text-gray-600 text-xs ml-1">(Random)</span></div>
+            <div>Type a word</div>
+            <div>
+              <i class="fa-solid fa-pencil text-lg"></i>
+            </div>
           </div>
         </div>
-        <div
-          class="flex justify-between w-full rounded-xl shadow-lg overflow-hidden border border-gray-800 p-3 mb-3 font-bold bg-gray-300 text-gray-600"
-          id="select-custom-card"
+        <!-- Time Limit -->
+        <div>
+          <h2 class="text-xl font-bold mb-2 text-gray-200">Time Limit</h2>
+          <p class="mb-3 text-gray-200">Alloted time before the game is over</p>
+
+          <div
+            class="mb-3 font-bold text-gray-600 w-full flex justify-center items-center rounded-xl shadow-lg p-2 bg-gray-300"
+          >
+            <div class="flex gap-4 text-gray-600 items-center" id="timer-container">
+              <button
+                class="w-8 h-8 rounded-full bg-[#272c32] grid place-items-center active:bg-gray-700"
+                id="timer-minus-btn"
+              >
+                <i class="fa-solid fa-minus text-white text-sm"></i>
+              </button>
+              <div class="font-bold text-xl text-gray-800"><span id="timer-span">5:00</span></div>
+              <button
+                class="w-8 h-8 rounded-full bg-[#272c32] grid place-items-center active:bg-gray-700"
+                id="timer-add-btn"
+              >
+                <i class="fa-solid fa-plus text-white text-sm"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CONTENT 2 -->
+
+      <section class="max-w-5xl w-full px-4 sm:px-6 mb-5 pb-3 sm:mb-10" id="content-2">
+        <div class="flex flex-col items-center gap-1">
+          <div class="text-2xl text-gray-400">The word is</div>
+          <div class="text-6xl font-bold text-center" id="word-box"></div>
+          <input
+            class="outline-none text-center w-full text-3xl sm:text-5xl border-b-2 border-gray-600 bg-transparent pb-1 font-bold hidden"
+            type="text"
+            placeholder="Type Custom Word"
+            maxlength="20"
+            id="word-input"
+          />
+        </div>
+        <button
+          class="button absolute max-w-10/11 active:bg-gray-300 active:text-gray-900 font-bold py-3 w-xs px-7 shadow-xl rounded-xl bg-[#B6174B] text-white text-lg"
+          id="ready-button"
         >
-          <div>Type a word</div>
-          <div>
-            <i class="fa-solid fa-pencil text-lg"></i>
-          </div>
-        </div>
+          <i class="fa-solid fa-play mr-2"></i>
+          Ready
+        </button>
+      </section>
+      <div
+        class="fixed right-1/2 top-[80dvh] transform translate-1/2 z-100 bg-gray-800/95 p-2 border border-gray-700 rounded-md animate-bounce select-none pointer-events-none opacity-0 transition-opacity duration-700 w-xs max-w-10/12 text-center text-gray-200"
+        id="snackbar"
+      >
+        Word is too short
       </div>
-    </section>
+    </main>
+    <script src="index.js" type="module"></script>
   </body>
 </html>

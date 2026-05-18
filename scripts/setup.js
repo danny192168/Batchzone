@@ -7,7 +7,7 @@ let gameData = {
   customCategories: [],
   finalCategory: null,
   impostorCount: 1,
-  time: 2,
+  time: 3,
   impostorIndices: [],
   word: null,
   hint: null,
@@ -289,8 +289,6 @@ function minutesToTime(minutes) {
   return `${wholeMinutes}:${seconds.toString().padStart(2, "0")}`;
 }
 
-let timerString = "2:00";
-
 const timerContainer = document.getElementById("timer-container");
 const timerMinusBtn = document.getElementById("timer-minus-btn");
 const timerAddBtn = document.getElementById("timer-add-btn");
@@ -304,6 +302,8 @@ function updateTime(i) {
     timerSpan.innerText = minutesToTime(gameData.time);
   }
 }
+
+updateTime(0);
 
 timerMinusBtn.addEventListener("click", () => {
   updateTime(-0.5);
